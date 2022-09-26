@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<baseline version="1.0">
+	<file name="src/androidTest/java/com/mateuszgrabarski/habittracker/ExampleInstrumentedTest.kt">
+		<error line="1" column="1" source="final-newline" />
+		<error line="3" column="1" source="import-ordering" />
+		<error line="9" column="1" source="no-wildcard-imports" />
+	</file>
+	<file name="src/main/java/com/mateuszgrabarski/habittracker/MainActivity.kt">
+		<error line="1" column="1" source="final-newline" />
+	</file>
+	<file name="src/main/java/com/mateuszgrabarski/habittracker/ui/theme/Color.kt">
+		<error line="1" column="1" source="final-newline" />
+	</file>
+	<file name="src/main/java/com/mateuszgrabarski/habittracker/ui/theme/Shape.kt">
+		<error line="1" column="1" source="final-newline" />
+	</file>
+	<file name="src/main/java/com/mateuszgrabarski/habittracker/ui/theme/Theme.kt">
+		<error line="1" column="1" source="final-newline" />
+	</file>
+	<file name="src/main/java/com/mateuszgrabarski/habittracker/ui/theme/Type.kt">
+		<error line="1" column="1" source="final-newline" />
+	</file>
+	<file name="src/test/java/com/mateuszgrabarski/habittracker/ExampleUnitTest.kt">
+		<error line="1" column="1" source="final-newline" />
+		<error line="3" column="1" source="import-ordering" />
+		<error line="5" column="1" source="no-wildcard-imports" />
+	</file>
+</baseline>
