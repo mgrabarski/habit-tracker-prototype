@@ -1,16 +1,20 @@
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
 buildscript {
 }
 
 plugins {
-    id("com.android.application") version "7.3.0" apply false
-    id("com.android.library") version "7.3.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.6.10" apply false
-    id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
-    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+    id(BuildPlugins.androidApplication) version Versions.androidApplication apply false
+    id(BuildPlugins.androidLibrary) version Versions.androidApplication apply false
+    id(BuildPlugins.kotlin) version Versions.kotlin apply false
+    id(BuildPlugins.ktlint) version Versions.ktlint
+    id(BuildPlugins.detekt) version Versions.detekt
+    id(BuildPlugins.dependencyUpdate) version Versions.dependencyUpdate
 }
 
 subprojects {
-    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+    apply(plugin = BuildPlugins.ktlint)
+    apply(plugin = BuildPlugins.detekt)
 
     repositories {
         mavenCentral()
@@ -19,4 +23,24 @@ subprojects {
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         debug.set(true)
     }
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
+}
+
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isNonStable(candidate.version)
+    }
+}
+
+tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
+    checkForGradleUpdate = true
+    outputFormatter = "html"
+    outputDir = "build/dependencyUpdates"
+    reportfileName = "report"
 }
