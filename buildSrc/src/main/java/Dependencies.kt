@@ -13,6 +13,8 @@ object AndroidDependencies {
     val composeUiTooling by lazy { "androidx.compose.ui:ui-tooling:${Versions.composeUiTooling}" }
     val composeTestManifest by lazy { "androidx.compose.ui:ui-test-manifest:${Versions.composeTestManifest}" }
     val material by lazy { "androidx.compose.material:material:${Versions.composeMaterial}" }
+    val destinations by lazy { "io.github.raamcosta.compose-destinations:core:${Versions.destination}" }
+    val destinationsKsp by lazy { "io.github.raamcosta.compose-destinations:ksp:${Versions.destination}" }
 }
 
 object UnitTestDependencies {

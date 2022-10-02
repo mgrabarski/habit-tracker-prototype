@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("com.google.devtools.ksp") version Versions.ksp
 }
 
 android {
@@ -50,6 +51,14 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    applicationVariants.all {
+        kotlin.sourceSets {
+            getByName(name) {
+                kotlin.srcDir("build/generated/ksp/$name/kotlin")
+            }
+        }
+    }
 }
 
 dependencies {
@@ -60,6 +69,8 @@ dependencies {
     implementation(AndroidDependencies.composeUi)
     implementation(AndroidDependencies.composeToolingPreview)
     implementation(AndroidDependencies.material)
+    implementation(AndroidDependencies.destinations)
+    ksp(AndroidDependencies.destinationsKsp)
 
     debugImplementation(AndroidDependencies.composeUiTooling)
     debugImplementation(AndroidDependencies.composeTestManifest)
