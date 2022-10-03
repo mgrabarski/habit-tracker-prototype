@@ -1,12 +1,11 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import org.jlleitschuh.gradle.ktlint.KtlintExtension
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 buildscript {
 }
 
 plugins {
-    id(BuildPlugins.androidApplication) version Versions.androidApplication apply false
-    id(BuildPlugins.androidLibrary) version Versions.androidApplication apply false
-    id(BuildPlugins.kotlin) version Versions.kotlin apply false
     id(BuildPlugins.ktlint) version Versions.ktlint
     id(BuildPlugins.detekt) version Versions.detekt
     id(BuildPlugins.dependencyUpdate) version Versions.dependencyUpdate
@@ -20,8 +19,16 @@ subprojects {
         mavenCentral()
     }
 
-    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    configure<KtlintExtension> {
         debug.set(true)
+    }
+}
+
+ktlint {
+    android.set(true)
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.HTML)
     }
 }
 

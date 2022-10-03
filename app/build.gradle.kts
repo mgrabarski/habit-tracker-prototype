@@ -1,55 +1,39 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    androidApp()
+    kotlinAndroid()
     id("com.google.devtools.ksp") version Versions.ksp
 }
 
 android {
-    namespace = "com.mateuszgrabarski.habittracker"
-    compileSdk = AppConfig.compileSdk
+    setAppConfig()
 
-    defaultConfig {
-        applicationId = "com.mateuszgrabarski.habittracker"
-        minSdk = AppConfig.minSdk
-        targetSdk = AppConfig.targetSdk
-        versionCode = AppConfig.versionCode
-        versionName = AppConfig.versionName
+    flavorDimensions += AppProductFlavours.flavorDimensions
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
+    productFlavors {
+        create(AppProductFlavours.production) {
+            namespace = ApplicationId.production
+            applicationId = ApplicationId.production
+        }
+        create(AppProductFlavours.stage) {
+            namespace = ApplicationId.stage
+            applicationId = ApplicationId.stage
+        }
+        create(AppProductFlavours.dev) {
+            namespace = ApplicationId.dev
+            applicationId = ApplicationId.dev
         }
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = Java.version
-        targetCompatibility = Java.version
-    }
-    kotlinOptions {
-        jvmTarget = Java.version.toString()
-    }
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
-    tasks.withType<Test> {
-        useJUnitPlatform()
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+
+    kotlinOptions {
+        jvmTarget = Java.version.toString()
     }
 
     applicationVariants.all {
@@ -71,6 +55,8 @@ dependencies {
     implementation(AndroidDependencies.material)
     implementation(AndroidDependencies.destinations)
     ksp(AndroidDependencies.destinationsKsp)
+
+    implementation(project(Modules.resources))
 
     debugImplementation(AndroidDependencies.composeUiTooling)
     debugImplementation(AndroidDependencies.composeTestManifest)

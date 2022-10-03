@@ -1,12 +1,11 @@
 object Versions {
     const val destination = "1.7.15-beta"
-    const val androidApplication = "7.3.0"
     const val kotlin = "1.7.10"
     const val ksp = "1.7.10-1.0.6"
     const val coroutines = "1.6.4"
     const val ktlint = "11.0.0"
     const val detekt = "1.21.0"
-    const val composeCompiler = "1.3.0"
+    const val composeCompiler = "1.3.1"
     const val core = "1.7.0"
     const val lifecycleRuntime = "2.3.1"
     const val activityCompose = "1.3.1"
