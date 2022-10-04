@@ -1,7 +1,11 @@
+import Libraries.androidTests
+import Libraries.baseDependencies
+import Libraries.uiAndCompose
+
 plugins {
     androidApp()
     kotlinAndroid()
-    id("com.google.devtools.ksp") version Versions.ksp
+    ksp()
 }
 
 android {
@@ -46,25 +50,12 @@ android {
 }
 
 dependencies {
+    baseDependencies()
 
     implementation(AndroidDependencies.core)
-    implementation(AndroidDependencies.lifecycleRuntime)
-    implementation(AndroidDependencies.activityCompose)
-    implementation(AndroidDependencies.composeUi)
-    implementation(AndroidDependencies.composeToolingPreview)
-    implementation(AndroidDependencies.material)
-    implementation(AndroidDependencies.destinations)
-    ksp(AndroidDependencies.destinationsKsp)
+    uiAndCompose()
 
     implementation(project(Modules.resources))
 
-    debugImplementation(AndroidDependencies.composeUiTooling)
-    debugImplementation(AndroidDependencies.composeTestManifest)
-
-    testImplementation(UnitTestDependencies.kotestCore)
-    testImplementation(UnitTestDependencies.kotestRunner)
-
-    androidTestImplementation(IntegrationTestDependencies.androidJunit)
-    androidTestImplementation(IntegrationTestDependencies.espressoCore)
-    androidTestImplementation(IntegrationTestDependencies.composeTestJunit)
+    androidTests()
 }

@@ -24,4 +24,6 @@ object Versions {
     const val espressoCore = "3.4.0"
     const val composeTestJunit = "1.1.1"
     const val dependencyUpdate = "0.42.0"
+    const val koinAndroid= "3.2.2"
+    const val koinAndroidCompose= "3.2.1"
 }

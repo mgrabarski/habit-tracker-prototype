@@ -15,6 +15,8 @@ object AndroidDependencies {
     val material by lazy { "androidx.compose.material:material:${Versions.composeMaterial}" }
     val destinations by lazy { "io.github.raamcosta.compose-destinations:core:${Versions.destination}" }
     val destinationsKsp by lazy { "io.github.raamcosta.compose-destinations:ksp:${Versions.destination}" }
+    val koinCore by lazy { "io.insert-koin:koin-android:${Versions.koinAndroid}" }
+    val koinCompose by lazy { "io.insert-koin:koin-androidx-compose:${Versions.koinAndroidCompose}" }
 }
 
 object UnitTestDependencies {
@@ -28,6 +30,7 @@ object UnitTestDependencies {
     val mockkAgentJvm by lazy { "io.mockk:mockk-agent-jvm:${Versions.mockkAgentJvm}" }
     val turbine by lazy { "app.cash.turbine:turbine:${Versions.turbine}" }
     val androidxCoreTesting by lazy { "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}" }
+    val koin by lazy { "io.insert-koin:koin-test-junit5:${Versions.koinAndroid}" }
 }
 
 object IntegrationTestDependencies {
