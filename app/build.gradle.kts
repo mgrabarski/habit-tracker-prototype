@@ -60,6 +60,7 @@ dependencies {
     uiAndCompose()
 
     implementation(project(Modules.resources))
+    implementation(project(Modules.Features.splashScreen))
 
     androidTests()
 }

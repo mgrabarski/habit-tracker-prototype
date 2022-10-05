@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mateuszgrabarski.habittracker.resources"
+    namespace = "com.mateuszgrabarski.habittracker.features.splash"
 
     setLibraryConfig()
 
@@ -26,4 +26,6 @@ android {
 
 dependencies {
     uiAndCompose()
+
+    implementation(project(Modules.resources))
 }
