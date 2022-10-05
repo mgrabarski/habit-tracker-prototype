@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.ui.theme
+package com.mateuszgrabarski.habittracker.resources.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

@@ -47,6 +47,10 @@ android {
             }
         }
     }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
@@ -56,6 +60,7 @@ dependencies {
     uiAndCompose()
 
     implementation(project(Modules.resources))
+    implementation(project(Modules.Features.splashScreen))
 
     androidTests()
 }

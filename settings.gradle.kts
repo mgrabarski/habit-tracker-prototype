@@ -16,5 +16,6 @@ rootProject.name = "Habit Tracker"
 
 include(
     ":app",
-    ":resources"
+    ":resources",
+    ":features:splash-screen"
 )
