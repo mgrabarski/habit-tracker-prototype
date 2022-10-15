@@ -13,6 +13,7 @@ object Libraries {
         dependencies.add("implementation", AndroidDependencies.composeUi)
         dependencies.add("implementation", AndroidDependencies.composeToolingPreview)
         dependencies.add("implementation", AndroidDependencies.material)
+        dependencies.add("implementation", AndroidDependencies.materialNavigation)
         dependencies.add("implementation", AndroidDependencies.destinations)
         dependencies.add("ksp", AndroidDependencies.destinationsKsp)
 

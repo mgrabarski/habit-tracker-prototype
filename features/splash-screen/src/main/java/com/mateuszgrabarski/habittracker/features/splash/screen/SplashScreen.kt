@@ -21,10 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_launcher_foreground
-import com.mateuszgrabarski.habittracker.resources.ui.theme.HabitTrackerTheme
 import com.mateuszgrabarski.habittracker.resources.ui.theme.splashScreenBackground
 import kotlinx.coroutines.delay
 
@@ -76,19 +74,5 @@ fun SplashScreen(
             contentDescription = "",
             tint = Color.White
         )
-    }
-}
-
-@Preview
-@Composable
-private fun SplashScreenPreview() {
-    SplashScreen(navigateToHome = {})
-}
-
-@Preview
-@Composable
-private fun SplashScreenDarkPreview() {
-    HabitTrackerTheme(darkTheme = true) {
-        SplashScreen(navigateToHome = {})
     }
 }

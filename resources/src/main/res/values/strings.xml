@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottomBar1">Habits</string>
+    <string name="bottomBar2">Stats</string>
+    <string name="bottomBar3">Notes</string>
+    <string name="bottomBar4">Tasks</string>
+</resources>
