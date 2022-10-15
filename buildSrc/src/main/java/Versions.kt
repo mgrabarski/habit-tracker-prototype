@@ -1,5 +1,5 @@
 object Versions {
-    const val destination = "1.7.15-beta"
+    const val destination = "1.7.22-beta"
     const val kotlin = "1.7.10"
     const val ksp = "1.7.10-1.0.6"
     const val coroutines = "1.6.4"
@@ -26,4 +26,5 @@ object Versions {
     const val dependencyUpdate = "0.42.0"
     const val koinAndroid= "3.2.2"
     const val koinAndroidCompose= "3.2.1"
+    const val materialNavigation = "0.25.1"
 }
