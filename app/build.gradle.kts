@@ -61,6 +61,8 @@ dependencies {
 
     implementation(project(Modules.resources))
     implementation(project(Modules.Features.splashScreen))
+    implementation(project(Modules.Features.Habits.list))
+    implementation(project(Modules.Features.Habits.addNew))
 
     androidTests()
 }

@@ -9,21 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.FullScreenViewDestination
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.FullScreenViewDestination
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-
-@RootNavGraph(start = true)
-@Destination
-@Composable
-fun HabitsScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(color = Color.Red)
-    )
-}
 
 @Destination
 @Composable

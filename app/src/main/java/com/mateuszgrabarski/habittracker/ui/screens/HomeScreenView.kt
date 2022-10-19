@@ -27,15 +27,13 @@ import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar1
 import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar2
 import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar3
 import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar4
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.NavGraphs
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.appCurrentDestinationAsState
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.Destination
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.HabitsScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.NotesScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.StatsScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.destinations.TaskScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.startAppDestination
 import com.mateuszgrabarski.habittracker.ui.screens.components.BottomBar
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.Destination
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.HabitsScreenDestination
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.NotesScreenDestination
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.StatsScreenDestination
+import com.mateuszgrabarski.habittracker.ui.screens.destinations.TaskScreenDestination
+import com.mateuszgrabarski.habittracker.ui.screens.topbar.TopBarSelection
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.rememberNavHostEngine
 import com.ramcosta.composedestinations.spec.Route
@@ -52,7 +50,12 @@ fun HomeScreenView() {
                 BottomBar(navController)
             }
         },
-        topBar = null,
+        topBar = { destination, _ ->
+            TopBarSelection(
+                destination = destination,
+                navController = navController
+            )
+        },
         navController = navController
     ) {
         DestinationsNavHost(
