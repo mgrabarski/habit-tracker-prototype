@@ -1,42 +1,31 @@
 package com.mateuszgrabarski.habittracker.features.habits.list.ui.topbar
 
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Add
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.vector.ImageVector
+import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_add
+import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_action
+import com.mateuszgrabarski.habittracker.resources.ui.components.TopAppBarActionButton
+import com.mateuszgrabarski.habittracker.resources.ui.theme.topBarBackground
+import com.mateuszgrabarski.habittracker.resources.ui.theme.topBarContent
 
 @Composable
 fun HabitsListTopBar(
     navigateToAddNewHabit: () -> Unit
 ) {
     TopAppBar(
+        backgroundColor = MaterialTheme.colors.topBarBackground,
+        contentColor = MaterialTheme.colors.topBarContent,
         title = {
             Text(text = "Habits list")
         },
         actions = {
             TopAppBarActionButton(
-                imageVector = Icons.Outlined.Add,
-                description = "Add"
-            ) {
-                navigateToAddNewHabit()
-            }
+                icon = ic_add,
+                contentDescription = add_habit_action,
+                onClick = navigateToAddNewHabit
+            )
         }
     )
-}
-
-@Composable
-fun TopAppBarActionButton(
-    imageVector: ImageVector,
-    description: String,
-    onClick: () -> Unit
-) {
-    IconButton(onClick = {
-        onClick()
-    }) {
-        Icon(imageVector = imageVector, contentDescription = description)
-    }
 }

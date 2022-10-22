@@ -1,17 +1,20 @@
-package com.mateuszgrabarski.habittracker.ui.screens.components
+package com.mateuszgrabarski.habittracker.ui.screens.bottombar
 
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.mateuszgrabarski.habittracker.ui.screens.BottomBarDestination
+import com.mateuszgrabarski.habittracker.resources.ui.theme.bottomBarBackground
+import com.mateuszgrabarski.habittracker.resources.ui.theme.bottomBarContent
 
 @Composable
 fun BottomBar(
@@ -20,7 +23,10 @@ fun BottomBar(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
+    BottomNavigation(
+        backgroundColor = MaterialTheme.colors.bottomBarBackground,
+        contentColor = MaterialTheme.colors.bottomBarContent
+    ) {
         BottomBarDestination.values().forEach { destination ->
             BottomNavigationItem(
                 selected = currentDestination?.hierarchy?.any {
@@ -37,7 +43,7 @@ fun BottomBar(
                 },
                 icon = {
                     Icon(
-                        imageVector = destination.icon,
+                        painter = painterResource(id = destination.icon),
                         contentDescription = stringResource(id = destination.label)
                     )
                 },
