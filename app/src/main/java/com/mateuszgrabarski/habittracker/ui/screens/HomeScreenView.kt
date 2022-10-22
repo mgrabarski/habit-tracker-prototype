@@ -3,19 +3,12 @@
 package com.mateuszgrabarski.habittracker.ui.screens
 
 import android.util.Log
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Scaffold
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Done
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
@@ -23,16 +16,9 @@ import androidx.navigation.plusAssign
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
-import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar1
-import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar2
-import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar3
-import com.mateuszgrabarski.habittracker.resources.R.string.bottomBar4
-import com.mateuszgrabarski.habittracker.ui.screens.components.BottomBar
+import com.mateuszgrabarski.habittracker.ui.screens.bottombar.BottomBar
+import com.mateuszgrabarski.habittracker.ui.screens.bottombar.BottomBarDestination
 import com.mateuszgrabarski.habittracker.ui.screens.destinations.Destination
-import com.mateuszgrabarski.habittracker.ui.screens.destinations.HabitsScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.destinations.NotesScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.destinations.StatsScreenDestination
-import com.mateuszgrabarski.habittracker.ui.screens.destinations.TaskScreenDestination
 import com.mateuszgrabarski.habittracker.ui.screens.topbar.TopBarSelection
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.rememberNavHostEngine
@@ -104,14 +90,3 @@ private fun ArrayDeque<NavBackStackEntry>.printStack() {
 
 private val Destination.shouldShowBottomBar
     get() = BottomBarDestination.values().map { it.direction }.contains(this)
-
-enum class BottomBarDestination(
-    val direction: Destination,
-    val icon: ImageVector,
-    @StringRes val label: Int
-) {
-    Habits(HabitsScreenDestination, Icons.Default.Home, bottomBar1),
-    Stats(StatsScreenDestination, Icons.Default.Star, bottomBar2),
-    Notes(NotesScreenDestination, Icons.Default.Notifications, bottomBar3),
-    Tasks(TaskScreenDestination, Icons.Default.Done, bottomBar4)
-}

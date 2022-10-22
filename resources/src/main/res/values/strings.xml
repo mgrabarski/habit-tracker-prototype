@@ -4,4 +4,5 @@
     <string name="bottomBar2">Stats</string>
     <string name="bottomBar3">Notes</string>
     <string name="bottomBar4">Tasks</string>
+    <string name="add_habit_action">Add</string>
 </resources>
