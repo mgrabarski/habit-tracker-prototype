@@ -16,8 +16,8 @@ import androidx.navigation.plusAssign
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
-import com.mateuszgrabarski.habittracker.ui.screens.bottombar.BottomBarDestination
 import com.mateuszgrabarski.habittracker.ui.screens.bottombar.BottomBar
+import com.mateuszgrabarski.habittracker.ui.screens.bottombar.BottomBarDestination
 import com.mateuszgrabarski.habittracker.ui.screens.destinations.Destination
 import com.mateuszgrabarski.habittracker.ui.screens.topbar.TopBarSelection
 import com.ramcosta.composedestinations.DestinationsNavHost
