@@ -19,7 +19,11 @@ fun TopBarSelection(
                 navController.navigate(AddHabitScreenDestination.route)
             }
         )
-        AddHabitScreenDestination -> AddNewHabitTopBar()
+        AddHabitScreenDestination -> AddNewHabitTopBar(
+            navigateBack = {
+                navController.navigateUp()
+            }
+        )
         else -> Unit
     }
 }

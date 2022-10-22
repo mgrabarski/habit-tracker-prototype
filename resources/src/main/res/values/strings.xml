@@ -6,4 +6,5 @@
     <string name="bottomBar4">Tasks</string>
     <string name="add_habit_action">Add</string>
     <string name="add_habit_top_bar_title">Add Habit</string>
+    <string name="top_bar_back_action">Back</string>
 </resources>
