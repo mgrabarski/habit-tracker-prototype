@@ -17,17 +17,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mateuszgrabarski.habittracker.resources.R
+import com.mateuszgrabarski.habittracker.resources.ui.components.abstraction.ItemToSelect
 import com.mateuszgrabarski.habittracker.resources.ui.theme.Grey600
 
 @Composable
 fun SelectableSpinner(
-    title: String,
-    notSelectedOption: String,
-    options: List<String>,
-    selectedOption: String,
-    onValueChange: (String) -> Unit
+    title: Int,
+    notSelectedOption: ItemToSelect,
+    options: List<ItemToSelect>,
+    selectedOption: ItemToSelect,
+    onValueChange: (ItemToSelect) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
 
@@ -41,10 +43,10 @@ fun SelectableSpinner(
             modifier = Modifier
                 .fillMaxWidth(),
             readOnly = true,
-            value = selectedOption,
+            value = stringResource(id = selectedOption.stringId),
             onValueChange = {},
             label = {
-                Text(text = title)
+                Text(text = stringResource(id = title))
             },
             trailingIcon = {
                 if (expanded) {
@@ -68,20 +70,22 @@ fun SelectableSpinner(
                 expanded = false
             }
         ) {
-            (listOf(notSelectedOption) + options).forEach { selectionOption ->
-                DropdownMenuItem(
-                    onClick = {
-                        onValueChange(selectionOption)
-                        expanded = false
-                    }
-                ) {
-                    if (selectionOption == "-") {
-                        Text(text = selectionOption, color = Grey600)
-                    } else {
-                        Text(text = selectionOption)
+            (listOf(notSelectedOption) + options)
+                .forEach {
+                    DropdownMenuItem(
+                        onClick = {
+                            onValueChange(it)
+                            expanded = false
+                        }
+                    ) {
+                        val selectedText = stringResource(id = it.stringId)
+                        if (selectedText == "-") {
+                            Text(text = selectedText, color = Grey600)
+                        } else {
+                            Text(text = selectedText)
+                        }
                     }
                 }
-            }
         }
     }
 }
@@ -91,11 +95,14 @@ fun SelectableSpinner(
 @Preview(showSystemUi = true)
 @Composable
 private fun SelectableSpinnerPreview() {
+
+    data class SomeItems(override val stringId: Int) : ItemToSelect
+
     SelectableSpinner(
-        title = "some title",
-        notSelectedOption = "-",
-        options = listOf("option1", "option2"),
-        selectedOption = "-",
+        title = R.string.test_text,
+        notSelectedOption = SomeItems(stringId = R.string.test_text),
+        options = listOf(SomeItems(stringId = R.string.test_text)),
+        selectedOption = SomeItems(stringId = R.string.test_text),
         onValueChange = {}
     )
 }

@@ -1,5 +1,6 @@
 object Modules {
     val resources by lazy { ":resources" }
+    val business by lazy { ":business" }
 
     object Features {
         val splashScreen by lazy { ":features:splash-screen" }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="test_text" translatable="false">Text</string>
     <string name="bottomBar1">Habits</string>
     <string name="bottomBar2">Stats</string>
     <string name="bottomBar3">Notes</string>
@@ -7,5 +8,12 @@
     <string name="add_habit_action">Add</string>
     <string name="add_habit_top_bar_title">Add Habit</string>
     <string name="add_habit_select_icon">Habit icon</string>
+    <string name="add_habit_habit_name">Habit name</string>
+    <string name="add_habit_habit_description">Description (Optional)</string>
     <string name="top_bar_back_action">Back</string>
+    <string name="habit_type_none">None</string>
+    <string name="habit_type_yes_or_no">Yes/No</string>
+    <string name="habit_type_number">Number</string>
+    <string name="habit_type_timer">Timer</string>
+    <string name="habit_type_check_list">Check list</string>
 </resources>

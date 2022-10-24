@@ -25,8 +25,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.mateuszgrabarski.habittracker.business.habits.HabitType
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_habit_icon_not_selected
+import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_description
+import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_name
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_select_icon
+import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_check_list
 import com.mateuszgrabarski.habittracker.resources.ui.components.spinner.SelectableSpinner
 import com.mateuszgrabarski.habittracker.resources.ui.theme.BorderColor
 
@@ -69,7 +73,7 @@ fun AddNewHabitScreen() {
                 habitName = it
             },
             label = {
-                Text(text = "Habit name")
+                Text(text = stringResource(id = add_habit_habit_name))
             }
         )
         OutlinedTextField(
@@ -80,38 +84,38 @@ fun AddNewHabitScreen() {
                 description = it
             },
             label = {
-                Text(text = "Description")
+                Text(text = stringResource(id = add_habit_habit_description))
             }
         )
-        var selectedOptionText by remember { mutableStateOf("-") }
+        var selectedOptionText by remember { mutableStateOf(HabitType.getNotSelectableType()) }
         SelectableSpinner(
-            title = "Type",
-            notSelectedOption = "-",
-            options = listOf("Yes/No", "Number", "Timer", "Checklist"),
+            title = habit_type_check_list,
+            notSelectedOption = HabitType.getNotSelectableType(),
+            options = HabitType.getSelectableTypes(),
             selectedOption = selectedOptionText
         ) {
-            selectedOptionText = it
+            selectedOptionText = it as HabitType
         }
 
         when (selectedOptionText) {
-            "Number" -> {
+            HabitType.Number -> {
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Text(text = "Unit")
                     Text(text = "Goal")
                     Text(text = "Number")
                 }
             }
-            "Timer" -> {
+            HabitType.Timer -> {
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Text(text = "Time")
                 }
             }
-            "Checklist" -> {
+            HabitType.CheckList -> {
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Text(text = "TODO list")
                 }
             }
-            "Yes/No" -> Unit
+            HabitType.YesOrNo -> Unit
             else -> Unit
         }
     }
