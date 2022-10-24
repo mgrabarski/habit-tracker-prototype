@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
@@ -29,13 +30,16 @@ import com.mateuszgrabarski.habittracker.business.habits.HabitType
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_habit_icon_not_selected
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_description
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_name
+import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_next_btn
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_select_icon
 import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_check_list
 import com.mateuszgrabarski.habittracker.resources.ui.components.spinner.SelectableSpinner
 import com.mateuszgrabarski.habittracker.resources.ui.theme.BorderColor
 
 @Composable
-fun AddNewHabitScreen() {
+fun AddNewHabitScreen(
+    onMoveToDurationSet: () -> Unit
+) {
     val scrollState = rememberScrollState()
     var habitName by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
@@ -118,6 +122,16 @@ fun AddNewHabitScreen() {
             HabitType.YesOrNo -> Unit
             else -> Unit
         }
+
+        Button(
+            modifier = Modifier
+                .fillMaxWidth(),
+            onClick = {
+                onMoveToDurationSet()
+            }
+        ) {
+            Text(text = stringResource(id = add_habit_next_btn))
+        }
     }
 }
 
@@ -126,5 +140,5 @@ fun AddNewHabitScreen() {
 @Preview(showSystemUi = true)
 @Composable
 private fun AddNewHabitScreenPreview() {
-    AddNewHabitScreen()
+    AddNewHabitScreen(onMoveToDurationSet = {})
 }
