@@ -10,6 +10,8 @@
     <string name="add_habit_select_icon">Habit icon</string>
     <string name="add_habit_habit_name">Habit name</string>
     <string name="add_habit_habit_description">Description (Optional)</string>
+    <string name="add_habit_choose_icon_title">Choose icon:</string>
+    <string name="add_habit_choose_type_title">Choose type:</string>
     <string name="add_habit_next_btn">Next</string>
     <string name="top_bar_back_action">Back</string>
     <string name="habit_type_none">None</string>
