@@ -1,3 +1,4 @@
+import Libraries.baseDependencies
 import Libraries.uiAndCompose
 
 plugins {
@@ -22,9 +23,14 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
+    baseDependencies()
     uiAndCompose()
 
     implementation(project(Modules.resources))
