@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -26,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -33,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import com.mateuszgrabarski.habittracker.business.habits.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.ChooseHabitIconDialog
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_habit_icon_not_selected
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_choose_icon_title
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_choose_type_title
@@ -56,7 +59,7 @@ fun AddNewHabitScreen(
         ChooseHabitIconDialog(
             setShowDialog = {
                 showDialog = it
-            }, setValue = {
+            }, iconReady = {
                 viewModel.updateSelectedIcon(
                     icon = it
                 )
@@ -74,6 +77,7 @@ fun AddNewHabitScreen(
             )
     ) {
         ChooseIconCard(
+            selectedIcon = viewModel.selectedIcon,
             showDialog = {
                 showDialog = true
             }
@@ -150,7 +154,8 @@ private fun NameAndDescriptionCard(
 
 @Composable
 private fun ChooseIconCard(
-    showDialog: () -> Unit
+    showDialog: () -> Unit,
+    selectedIcon: SelectedIcon?
 ) {
     Card(
         modifier = Modifier
@@ -178,10 +183,22 @@ private fun ChooseIconCard(
                         showDialog()
                     }
             ) {
-                Icon(
-                    painter = painterResource(id = ic_habit_icon_not_selected),
-                    contentDescription = stringResource(id = add_habit_select_icon)
-                )
+                if (selectedIcon == null) {
+                    Icon(
+                        modifier = Modifier.size(size = 120.dp),
+                        painter = painterResource(id = ic_habit_icon_not_selected),
+                        contentDescription = stringResource(id = add_habit_select_icon)
+                    )
+                } else {
+                    Icon(
+                        modifier = Modifier
+                            .size(size = 120.dp)
+                            .padding(all = 8.dp),
+                        painter = painterResource(id = selectedIcon.icon.iconId),
+                        contentDescription = null,
+                        tint = Color(selectedIcon.color)
+                    )
+                }
             }
         }
     }

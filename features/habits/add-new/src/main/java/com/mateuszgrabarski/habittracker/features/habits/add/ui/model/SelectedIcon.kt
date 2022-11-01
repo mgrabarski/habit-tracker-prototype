@@ -4,5 +4,5 @@ import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
 
 data class SelectedIcon(
     val icon: HabitIcon,
-    val color: String
+    val color: Int
 )
