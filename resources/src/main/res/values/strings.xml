@@ -18,5 +18,4 @@
     <string name="habit_type_yes_or_no">Yes/No</string>
     <string name="habit_type_number">Number</string>
     <string name="habit_type_timer">Timer</string>
-    <string name="habit_type_check_list">Check list</string>
 </resources>

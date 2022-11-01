@@ -1,7 +1,6 @@
 package com.mateuszgrabarski.habittracker.business.habits
 
 import androidx.annotation.StringRes
-import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_check_list
 import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_none
 import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_number
 import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_timer
@@ -14,8 +13,7 @@ enum class HabitType(
     None(habit_type_none),
     YesOrNo(habit_type_yes_or_no),
     Number(habit_type_number),
-    Timer(habit_type_timer),
-    CheckList(habit_type_check_list);
+    Timer(habit_type_timer);
 
     companion object {
         fun getNotSelectableType() = None

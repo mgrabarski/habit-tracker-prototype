@@ -22,8 +22,7 @@ class HabitTypeTest : DescribeSpec({
                 shouldContainInOrder(
                     HabitType.YesOrNo,
                     HabitType.Number,
-                    HabitType.Timer,
-                    HabitType.CheckList
+                    HabitType.Timer
                 )
             }
         }
@@ -44,10 +43,6 @@ class HabitTypeTest : DescribeSpec({
 
             it("Timer") {
                 HabitType.fromIdToSelectedItem(stringId = R.string.habit_type_timer) shouldBe HabitType.Timer
-            }
-
-            it("CheckList") {
-                HabitType.fromIdToSelectedItem(stringId = R.string.habit_type_check_list) shouldBe HabitType.CheckList
             }
         }
     }
