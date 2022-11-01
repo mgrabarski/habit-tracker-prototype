@@ -47,6 +47,7 @@ fun ChooseHabitIconDialog(
     ) {
         Box(
             modifier = Modifier
+                .height(height = 350.dp)
                 .background(color = Color.White),
             contentAlignment = Alignment.Center
         ) {
@@ -66,7 +67,6 @@ private fun SelectIconContent(
     Column(
         modifier = Modifier
             .padding(20.dp)
-            .height(height = 350.dp)
     ) {
         HabitIcon.values()
             .toList()
@@ -114,6 +114,7 @@ private fun SelectColorContent(
                             .clickable {
                                 viewModel.updateSelectedColor(it.toArgb())
                                 iconReady(viewModel.toSelectedIcon())
+                                viewModel.reset()
                             }
                         ) {
                             drawCircle(color = it)
@@ -163,6 +164,11 @@ class ChooseHabitIconDialogViewModel : ViewModel() {
             icon = icon,
             color = selectedColor
         )
+    }
+
+    fun reset() {
+        selectedIcon = null
+        selectedColor = 0
     }
 }
 
