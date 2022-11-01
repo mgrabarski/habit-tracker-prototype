@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="test_text" translatable="false">Text</string>
+    <string name="app_name">Habit Tracker</string>
     <string name="bottomBar1">Habits</string>
     <string name="bottomBar2">Stats</string>
     <string name="bottomBar3">Notes</string>
@@ -13,6 +14,7 @@
     <string name="add_habit_choose_icon_title">Choose icon:</string>
     <string name="add_habit_choose_type_title">Choose type:</string>
     <string name="add_habit_next_btn">Next</string>
+    <string name="add_habit_fill_inputs_title">Fill inputs:</string>
     <string name="top_bar_back_action">Back</string>
     <string name="habit_type_none">None</string>
     <string name="habit_type_yes_or_no">Yes/No</string>
