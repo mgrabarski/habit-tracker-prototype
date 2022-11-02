@@ -44,6 +44,7 @@ class AddNewHabitViewModel(
 
     fun updateHabitDescription(description: String) {
         habitDescription = description
+        enableNextButton()
     }
 
     fun updateHabitType(type: HabitType) {
