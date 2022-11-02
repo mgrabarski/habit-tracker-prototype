@@ -9,7 +9,9 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun AddNewHabitDurationScreen() {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(color = Color.Red))
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Red)
+    )
 }
