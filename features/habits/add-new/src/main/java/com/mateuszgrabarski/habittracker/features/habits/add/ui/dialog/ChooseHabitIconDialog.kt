@@ -109,13 +109,14 @@ private fun SelectColorContent(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     row.forEach {
-                        Canvas(modifier = Modifier
-                            .size(size = 30.dp)
-                            .clickable {
-                                viewModel.updateSelectedColor(it.toArgb())
-                                iconReady(viewModel.toSelectedIcon())
-                                viewModel.reset()
-                            }
+                        Canvas(
+                            modifier = Modifier
+                                .size(size = 30.dp)
+                                .clickable {
+                                    viewModel.updateSelectedColor(it.toArgb())
+                                    iconReady(viewModel.toSelectedIcon())
+                                    viewModel.reset()
+                                }
                         ) {
                             drawCircle(color = it)
                         }

@@ -15,6 +15,9 @@
     <string name="add_habit_choose_type_title">Choose type:</string>
     <string name="add_habit_next_btn">Next</string>
     <string name="add_habit_fill_inputs_title">Fill inputs:</string>
+    <string name="add_habit_time_title">Time</string>
+    <string name="add_habit_goal_title">Goal</string>
+    <string name="add_habit_unit_title">Unit</string>
     <string name="top_bar_back_action">Back</string>
     <string name="habit_type_none">None</string>
     <string name="habit_type_yes_or_no">Yes/No</string>

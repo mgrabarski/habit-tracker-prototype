@@ -12,7 +12,6 @@ fun AddHabitScreen(
 ) {
     AddNewHabitScreen(
         onMoveToDurationSet = {
-
         }
     )
 }

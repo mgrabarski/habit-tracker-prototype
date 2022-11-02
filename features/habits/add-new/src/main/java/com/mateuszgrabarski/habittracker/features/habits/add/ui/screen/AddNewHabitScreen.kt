@@ -32,18 +32,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.business.habits.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.ChooseHabitIconDialog
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.HabitTypeCard
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_habit_icon_not_selected
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_choose_icon_title
-import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_choose_type_title
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_description
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_habit_name
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_next_btn
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_select_icon
-import com.mateuszgrabarski.habittracker.resources.ui.components.spinner.SelectableSpinner
 import com.mateuszgrabarski.habittracker.resources.ui.theme.BorderColor
 import org.koin.androidx.compose.getViewModel
 
@@ -200,129 +198,6 @@ private fun ChooseIconCard(
                     )
                 }
             }
-        }
-    }
-}
-
-@Composable
-private fun HabitTypeCard(
-    viewModel: AddNewHabitViewModel
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(all = 8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(all = 8.dp)
-        ) {
-            SelectableSpinner(
-                title = add_habit_choose_type_title,
-                notSelectedOption = HabitType.getNotSelectableType(),
-                options = HabitType.getSelectableTypes(),
-                selectedOption = viewModel.habitType
-            ) {
-                viewModel.updateHabitType(type = it as HabitType)
-            }
-
-        }
-    }
-    when (viewModel.habitType) {
-        HabitType.Number -> {
-            NumberHabitTypeInputs()
-        }
-        HabitType.Timer -> {
-            TimerHabitTypeInputs()
-        }
-        HabitType.YesOrNo -> {
-        }
-        else -> {
-        }
-    }
-}
-
-@Composable
-private fun NumberHabitTypeInputs() {
-    var unit by remember { mutableStateOf("") }
-    var goal by remember { mutableStateOf("") }
-    var number by remember { mutableStateOf("") }
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(all = 8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(all = 8.dp)
-        ) {
-            Text(text = "Fill inputs:")
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                value = unit,
-                onValueChange = {
-                    unit = it
-                },
-                label = {
-                    Text(text = "Unit")
-                }
-            )
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                value = goal,
-                onValueChange = {
-                    goal = it
-                },
-                label = {
-                    Text(text = "Goal")
-                }
-            )
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                value = number,
-                onValueChange = {
-                    number = it
-                },
-                label = {
-                    Text(text = "Number")
-                }
-            )
-        }
-    }
-}
-
-@Composable
-private fun TimerHabitTypeInputs() {
-    var time by remember { mutableStateOf("") }
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(all = 8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(all = 8.dp)
-        ) {
-            Text(text = "Fill inputs:")
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                value = time,
-                onValueChange = {
-                    time = it
-                },
-                label = {
-                    Text(text = "Number")
-                }
-            )
         }
     }
 }
