@@ -54,6 +54,7 @@ class AddNewHabitViewModel(
 
     fun updateHabitTypeInputs(inputs: FilledHabitTypeInputs) {
         this.inputs = inputs
+        enableNextButton()
     }
 
     private fun enableNextButton() {

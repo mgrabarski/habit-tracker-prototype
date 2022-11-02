@@ -40,6 +40,7 @@ fun NumberHabitTypeInputs(
                 modifier = Modifier
                     .fillMaxWidth(),
                 value = viewModel.goal,
+                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                 onValueChange = {
                     viewModel.updateGoal(goal = it)
                     onFilledNumbers(viewModel.toFilledNumbers())
@@ -52,7 +53,6 @@ fun NumberHabitTypeInputs(
                 modifier = Modifier
                     .fillMaxWidth(),
                 value = viewModel.unit,
-                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                 onValueChange = {
                     viewModel.updateUnit(unit = it)
                     onFilledNumbers(viewModel.toFilledNumbers())
