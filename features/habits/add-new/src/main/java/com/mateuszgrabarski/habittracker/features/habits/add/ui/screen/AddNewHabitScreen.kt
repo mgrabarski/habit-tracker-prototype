@@ -40,7 +40,8 @@ fun AddNewHabitScreen(
         ChooseHabitIconDialog(
             setShowDialog = {
                 showDialog = it
-            }, iconReady = {
+            },
+            iconReady = {
                 viewModel.updateSelectedIcon(
                     icon = it
                 )

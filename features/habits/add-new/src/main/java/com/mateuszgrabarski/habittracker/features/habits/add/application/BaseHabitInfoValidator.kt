@@ -1,6 +1,7 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application
 
 import com.mateuszgrabarski.habittracker.business.habits.HabitType
+import com.mateuszgrabarski.habittracker.features.habits.add.const.MIN_NUMBER_OF_CHARS_IN_HABIT_NAME
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.NumberInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
@@ -23,7 +24,7 @@ class BaseHabitInfoValidator {
         selectedIcon != null
 
     private fun habitNameMustBeLongerThenMinNumberOfChars(habitName: String) =
-        habitName.length > MIN_NUMBER_OF_CHARS
+        habitName.length > MIN_NUMBER_OF_CHARS_IN_HABIT_NAME
 
     private fun typeCanNotBeNotSelected(habitType: HabitType) =
         habitType != HabitType.getNotSelectableType()
@@ -58,9 +59,4 @@ class BaseHabitInfoValidator {
         } else {
             false
         }
-
-    companion object {
-
-        private const val MIN_NUMBER_OF_CHARS = 3
-    }
 }

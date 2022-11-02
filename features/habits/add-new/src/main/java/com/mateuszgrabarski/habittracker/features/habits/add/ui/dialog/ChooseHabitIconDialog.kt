@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.ViewModel
 import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_COLORS_IN_ROW
+import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_ICONS_IN_ROW
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.resources.ui.theme.availableColors
 import org.koin.androidx.compose.getViewModel
@@ -70,7 +72,7 @@ private fun SelectIconContent(
     ) {
         HabitIcon.values()
             .toList()
-            .chunked(4)
+            .chunked(size = NUMBER_OF_ICONS_IN_ROW)
             .forEach { row ->
                 Row(
                     modifier = Modifier
@@ -100,7 +102,7 @@ private fun SelectColorContent(
             .verticalScroll(state = rememberScrollState())
     ) {
         availableColors
-            .chunked(7)
+            .chunked(size = NUMBER_OF_COLORS_IN_ROW)
             .forEach { row ->
                 Row(
                     modifier = Modifier
