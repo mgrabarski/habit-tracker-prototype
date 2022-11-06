@@ -41,3 +41,12 @@ jobs:
         # min-coverage-overall: 80
         min-coverage-changed-files: 80
 
+  steps:
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ${{ github.workspace }}/build/reports/kover/merged/xml/report.xml
+        name: codecov
+        fail_ci_if_error: false
+        verbose: true
