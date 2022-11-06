@@ -18,7 +18,7 @@ class HabitTypeTest : DescribeSpec({
 
         describe("get selectable types") {
             HabitType.getSelectableTypes().run {
-                size shouldBe 4
+                size shouldBe 3
                 shouldContainInOrder(
                     HabitType.YesOrNo,
                     HabitType.Number,
