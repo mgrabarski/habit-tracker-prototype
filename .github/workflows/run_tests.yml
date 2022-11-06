@@ -30,3 +30,6 @@ jobs:
       
     - name: Run tests
       run: ./gradlew testDebug
+
+  - name: Kotlinx Kover Report
+    uses: mi-kas/kover-report@v1.2-beta

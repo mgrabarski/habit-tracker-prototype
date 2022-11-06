@@ -17,3 +17,6 @@ fun PluginDependenciesSpec.ksp(): PluginDependencySpec =
 
 fun PluginDependenciesSpec.parcelize(): PluginDependencySpec =
     id("kotlin-parcelize")
+
+fun PluginDependenciesSpec.kover(): PluginDependencySpec =
+    id("kover")

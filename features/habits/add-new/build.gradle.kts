@@ -5,6 +5,7 @@ plugins {
     androidLibrary()
     kotlinAndroid()
     ksp()
+    kover()
 }
 
 android {

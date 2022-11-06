@@ -4,6 +4,7 @@ plugins {
     androidLibrary()
     kotlinAndroid()
     parcelize()
+    kover()
 }
 
 android {

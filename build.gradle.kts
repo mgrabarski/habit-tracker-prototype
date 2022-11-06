@@ -13,6 +13,7 @@ plugins {
     id(BuildPlugins.ktlint) version Versions.ktlint
     id(BuildPlugins.detekt) version Versions.detekt
     id(BuildPlugins.dependencyUpdate) version Versions.dependencyUpdate
+    id("org.jetbrains.kotlinx.kover") version "0.6.1"
 }
 
 subprojects {
@@ -54,4 +55,8 @@ tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     outputFormatter = "html"
     outputDir = "build/dependencyUpdates"
     reportfileName = "report"
+}
+
+koverMerged {
+    enable()
 }

@@ -7,6 +7,7 @@ plugins {
     kotlinAndroid()
     ksp()
     parcelize()
+    kover()
 }
 
 android {
