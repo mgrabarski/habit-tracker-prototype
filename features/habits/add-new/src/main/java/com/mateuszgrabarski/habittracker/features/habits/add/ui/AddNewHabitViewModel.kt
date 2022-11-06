@@ -5,6 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.mateuszgrabarski.habittracker.business.habits.HabitType
+import com.mateuszgrabarski.habittracker.business.habits.add.IconInfo
+import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription.NotNeeded
+import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
@@ -57,6 +60,17 @@ class AddNewHabitViewModel(
         this.inputs = inputs
         enableNextButton()
     }
+
+    fun getNewHabitBaseDefinition() = NewHabitBaseDefinition(
+        icon = IconInfo(
+            icon = requireNotNull(selectedIcon).icon,
+            color = requireNotNull(selectedIcon).color
+        ),
+        name = habitName,
+        description = habitDescription,
+        type = habitType,
+        inputs = inputs?.toInputDescription() ?: NotNeeded
+    )
 
     private fun enableNextButton() {
         nextButtonEnabled = nextButtonValidator.isValid(

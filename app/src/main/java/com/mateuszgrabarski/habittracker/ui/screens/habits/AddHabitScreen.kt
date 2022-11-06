@@ -13,7 +13,11 @@ fun AddHabitScreen(
 ) {
     AddNewHabitScreen(
         onMoveToDurationSet = {
-            destinationsNavigator.navigate(direction = AddHabitDurationScreenDestination)
+            destinationsNavigator.navigate(
+                direction = AddHabitDurationScreenDestination(
+                    habitBaseDefinition = it
+                )
+            )
         }
     )
 }

@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.ChooseHabitIconDialog
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.ChooseIconCard
@@ -30,7 +31,7 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun AddNewHabitScreen(
-    onMoveToDurationSet: () -> Unit
+    onMoveToDurationSet: (NewHabitBaseDefinition) -> Unit
 ) {
     val viewModel = getViewModel<AddNewHabitViewModel>()
 
@@ -82,7 +83,9 @@ fun AddNewHabitScreen(
                 .fillMaxWidth()
                 .padding(start = 8.dp, end = 8.dp),
             onClick = {
-                onMoveToDurationSet()
+                onMoveToDurationSet(
+                    viewModel.getNewHabitBaseDefinition()
+                )
             },
             enabled = viewModel.nextButtonEnabled
         ) {
