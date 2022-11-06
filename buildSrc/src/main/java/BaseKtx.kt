@@ -53,7 +53,7 @@ fun BaseExtension.setLibraryConfig() {
     testOptions {
         unitTests.all {
             it.testLogging {
-                events = setOf(PASSED, SKIPPED, FAILED)
+                events = setOf(FAILED)
             }
         }
     }
