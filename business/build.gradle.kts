@@ -3,6 +3,7 @@ import Libraries.baseDependencies
 plugins {
     androidLibrary()
     kotlinAndroid()
+    parcelize()
 }
 
 android {

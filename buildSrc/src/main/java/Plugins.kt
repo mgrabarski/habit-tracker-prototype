@@ -15,3 +15,5 @@ fun PluginDependenciesSpec.kotlinAndroid(): PluginDependencySpec =
 fun PluginDependenciesSpec.ksp(): PluginDependencySpec =
     id("com.google.devtools.ksp") version Versions.ksp
 
+fun PluginDependenciesSpec.parcelize(): PluginDependencySpec =
+    id("kotlin-parcelize")
