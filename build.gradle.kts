@@ -3,6 +3,10 @@ import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 buildscript {
+
+    dependencies {
+        Classpath.kotlinGradle
+    }
 }
 
 plugins {

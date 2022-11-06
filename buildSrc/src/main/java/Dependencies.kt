@@ -4,6 +4,10 @@ object Dependencies {
 
 }
 
+object Classpath {
+    val kotlinGradle by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}" }
+}
+
 object AndroidDependencies {
     val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
     val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}" }
