@@ -31,5 +31,13 @@ jobs:
     - name: Run tests
       run: ./gradlew testDebug
 
+    - name: Generate kover coverage report
+      run: ./gradlew koverMergedXmlReport
+
     - name: Kotlinx Kover Report
-      uses: mi-kas/kover-report@v1.2-beta
+      uses: mi-kas/kover-report@v1
+      with:
+        path: ${{ github.workspace }}/build/reports/kover/report.xml
+        title: Code Coverage
+        update-comment: true
+
