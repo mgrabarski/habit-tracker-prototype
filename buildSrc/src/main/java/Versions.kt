@@ -28,4 +28,5 @@ object Versions {
     const val koinTest = "3.2.2"
     const val koinAndroidCompose = "3.3.0"
     const val materialNavigation = "0.27.0"
+    const val kover = "0.6.1"
 }

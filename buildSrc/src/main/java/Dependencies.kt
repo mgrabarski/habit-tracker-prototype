@@ -51,6 +51,7 @@ object BuildPlugins {
     val ktlint by lazy { "org.jlleitschuh.gradle.ktlint" }
     val detekt by lazy { "io.gitlab.arturbosch.detekt" }
     val dependencyUpdate by lazy { "com.github.ben-manes.versions" }
+    val kover by lazy { "org.jetbrains.kotlinx.kover" }
 }
 
 object Java {
