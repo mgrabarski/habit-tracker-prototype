@@ -16,9 +16,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,11 +24,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.lifecycle.ViewModel
 import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_COLORS_IN_ROW
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_ICONS_IN_ROW
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.viewmodels.ChooseHabitIconDialogViewModel
 import com.mateuszgrabarski.habittracker.resources.ui.theme.availableColors
 import org.koin.androidx.compose.getViewModel
 
@@ -143,36 +140,6 @@ private fun HabitIconToSelect(
         contentDescription = "",
         tint = Color.Black
     )
-}
-
-class ChooseHabitIconDialogViewModel : ViewModel() {
-
-    var selectedIcon by mutableStateOf<HabitIcon?>(null)
-        private set
-
-    var selectedColor by mutableStateOf(0)
-        private set
-
-    fun updateSelectedIcon(icon: HabitIcon) {
-        selectedIcon = icon
-    }
-
-    fun updateSelectedColor(color: Int) {
-        selectedColor = color
-    }
-
-    fun toSelectedIcon(): SelectedIcon {
-        val icon = selectedIcon ?: throw IllegalArgumentException("Icon was not selected")
-        return SelectedIcon(
-            icon = icon,
-            color = selectedColor
-        )
-    }
-
-    fun reset() {
-        selectedIcon = null
-        selectedColor = 0
-    }
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true)
