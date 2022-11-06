@@ -4,6 +4,10 @@ object Dependencies {
 
 }
 
+object Classpath {
+    val kotlinGradle by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}" }
+}
+
 object AndroidDependencies {
     val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
     val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}" }
@@ -31,7 +35,7 @@ object UnitTestDependencies {
     val mockkAgentJvm by lazy { "io.mockk:mockk-agent-jvm:${Versions.mockkAgentJvm}" }
     val turbine by lazy { "app.cash.turbine:turbine:${Versions.turbine}" }
     val androidxCoreTesting by lazy { "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}" }
-    val koin by lazy { "io.insert-koin:koin-test-junit5:${Versions.koinAndroid}" }
+    val koin by lazy { "io.insert-koin:koin-test-junit5:${Versions.koinTest}" }
 }
 
 object IntegrationTestDependencies {
@@ -47,6 +51,7 @@ object BuildPlugins {
     val ktlint by lazy { "org.jlleitschuh.gradle.ktlint" }
     val detekt by lazy { "io.gitlab.arturbosch.detekt" }
     val dependencyUpdate by lazy { "com.github.ben-manes.versions" }
+    val kover by lazy { "org.jetbrains.kotlinx.kover" }
 }
 
 object Java {

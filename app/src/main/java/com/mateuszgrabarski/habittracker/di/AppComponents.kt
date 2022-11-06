@@ -1,5 +1,7 @@
 package com.mateuszgrabarski.habittracker.di
 
-import org.koin.core.module.Module
+import com.mateuszgrabarski.habittracker.features.habits.add.di.addHabitModule
 
-val appModules = emptyList<Module>()
+val appModules = listOf(
+    addHabitModule
+)

@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.resources.ui.components
+package com.mateuszgrabarski.habittracker.resources.ui.components.topbar
 
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes

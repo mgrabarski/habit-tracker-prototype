@@ -75,3 +75,7 @@ val Colors.topBarContent: Color
 val Colors.TopAppBarActionButton: Color
     @Composable
     get() = Grey50
+
+val Colors.BorderColor: Color
+    @Composable
+    get() = Purple600

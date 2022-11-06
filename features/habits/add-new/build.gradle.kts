@@ -1,9 +1,11 @@
+import Libraries.baseDependencies
 import Libraries.uiAndCompose
 
 plugins {
     androidLibrary()
     kotlinAndroid()
     ksp()
+    kover()
 }
 
 android {
@@ -22,10 +24,16 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
+    baseDependencies()
     uiAndCompose()
 
     implementation(project(Modules.resources))
+    implementation(project(Modules.business))
 }

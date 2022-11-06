@@ -5,6 +5,7 @@ object Libraries {
     fun DependencyHandlerScope.baseDependencies() {
         koin()
         kotest()
+        mockk()
     }
 
     fun DependencyHandlerScope.uiAndCompose() {
@@ -36,5 +37,9 @@ object Libraries {
     private fun DependencyHandlerScope.kotest() {
         dependencies.add("testImplementation", UnitTestDependencies.kotestCore)
         dependencies.add("testImplementation", UnitTestDependencies.kotestRunner)
+    }
+
+    private fun DependencyHandlerScope.mockk() {
+        dependencies.add("testImplementation", UnitTestDependencies.mockk)
     }
 }

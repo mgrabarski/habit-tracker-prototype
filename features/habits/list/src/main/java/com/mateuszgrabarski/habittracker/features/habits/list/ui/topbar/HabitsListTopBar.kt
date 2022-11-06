@@ -6,7 +6,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_add
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_action
-import com.mateuszgrabarski.habittracker.resources.ui.components.TopAppBarActionButton
+import com.mateuszgrabarski.habittracker.resources.ui.components.topbar.TopAppBarActionButton
 import com.mateuszgrabarski.habittracker.resources.ui.theme.topBarBackground
 import com.mateuszgrabarski.habittracker.resources.ui.theme.topBarContent
 

@@ -1,8 +1,6 @@
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED
-import org.gradle.api.tasks.testing.logging.TestLogEvent.PASSED
-import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 
 fun BaseAppModuleExtension.setAppConfig() {
     setLibraryConfig()
@@ -53,7 +51,7 @@ fun BaseExtension.setLibraryConfig() {
     testOptions {
         unitTests.all {
             it.testLogging {
-                events = setOf(PASSED, SKIPPED, FAILED)
+                events = setOf(FAILED)
             }
         }
     }

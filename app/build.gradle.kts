@@ -6,6 +6,8 @@ plugins {
     androidApp()
     kotlinAndroid()
     ksp()
+    parcelize()
+    kover()
 }
 
 android {
@@ -59,6 +61,7 @@ dependencies {
     implementation(AndroidDependencies.core)
     uiAndCompose()
 
+    implementation(project(Modules.business))
     implementation(project(Modules.resources))
     implementation(project(Modules.Features.splashScreen))
     implementation(project(Modules.Features.Habits.list))

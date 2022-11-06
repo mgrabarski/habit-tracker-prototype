@@ -3,12 +3,17 @@ import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 buildscript {
+
+    dependencies {
+        Classpath.kotlinGradle
+    }
 }
 
 plugins {
     id(BuildPlugins.ktlint) version Versions.ktlint
     id(BuildPlugins.detekt) version Versions.detekt
     id(BuildPlugins.dependencyUpdate) version Versions.dependencyUpdate
+    id(BuildPlugins.kover) version Versions.kover
 }
 
 subprojects {
@@ -50,4 +55,19 @@ tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     outputFormatter = "html"
     outputDir = "build/dependencyUpdates"
     reportfileName = "report"
+}
+
+koverMerged {
+    enable()
+    filters {
+        projects {
+            excludes += CodeCoverage.excludesModules
+        }
+        classes {
+            excludes += CodeCoverage.excludesClasses
+        }
+        annotations {
+            excludes += CodeCoverage.excludesAnnotations
+        }
+    }
 }

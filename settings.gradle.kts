@@ -19,5 +19,6 @@ include(
     ":resources",
     ":features:splash-screen",
     ":features:habits:list",
-    ":features:habits:add-new"
+    ":features:habits:add-new",
+    ":business"
 )
