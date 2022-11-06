@@ -61,16 +61,19 @@ class AddNewHabitViewModel(
         enableNextButton()
     }
 
-    fun getNewHabitBaseDefinition() = NewHabitBaseDefinition(
-        icon = IconInfo(
-            icon = requireNotNull(selectedIcon).icon,
-            color = requireNotNull(selectedIcon).color
-        ),
-        name = habitName,
-        description = habitDescription,
-        type = habitType,
-        inputs = inputs?.toInputDescription() ?: NotNeeded
-    )
+    fun getNewHabitBaseDefinition(): NewHabitBaseDefinition {
+        val icon = requireNotNull(selectedIcon)
+        return NewHabitBaseDefinition(
+            icon = IconInfo(
+                icon = icon.icon,
+                color = icon.color
+            ),
+            name = habitName,
+            description = habitDescription,
+            type = habitType,
+            inputs = inputs?.toInputDescription() ?: NotNeeded
+        )
+    }
 
     private fun enableNextButton() {
         nextButtonEnabled = nextButtonValidator.isValid(
