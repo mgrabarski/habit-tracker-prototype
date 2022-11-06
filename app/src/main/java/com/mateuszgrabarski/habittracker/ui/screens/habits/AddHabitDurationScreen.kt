@@ -10,5 +10,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 fun AddHabitDurationScreen(
     habitBaseDefinition: NewHabitBaseDefinition
 ) {
-    AddNewHabitDurationScreen()
+    AddNewHabitDurationScreen(
+        habitBaseDefinition = habitBaseDefinition
+    )
 }
