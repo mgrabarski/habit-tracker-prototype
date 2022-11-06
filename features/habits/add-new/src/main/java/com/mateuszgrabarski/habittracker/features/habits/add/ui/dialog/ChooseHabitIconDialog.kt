@@ -31,7 +31,7 @@ import androidx.lifecycle.ViewModel
 import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_COLORS_IN_ROW
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_ICONS_IN_ROW
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.resources.ui.theme.availableColors
 import org.koin.androidx.compose.getViewModel
 

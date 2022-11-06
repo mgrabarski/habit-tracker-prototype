@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.FilledHabitTypeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.viewmodel.NumberTypeInputsViewModel
 import com.mateuszgrabarski.habittracker.resources.R
 import org.koin.androidx.compose.getViewModel

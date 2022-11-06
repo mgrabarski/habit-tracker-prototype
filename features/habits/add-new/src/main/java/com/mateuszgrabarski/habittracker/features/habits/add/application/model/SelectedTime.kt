@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.model
+package com.mateuszgrabarski.habittracker.features.habits.add.application.model
 
 data class SelectedTime(
     val hours: Int,
