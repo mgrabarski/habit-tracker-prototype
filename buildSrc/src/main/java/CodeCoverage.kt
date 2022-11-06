@@ -1,12 +1,17 @@
 object CodeCoverage {
 
+    val excludesModules = listOf(
+        "app"
+    )
+
     val excludesClasses = listOf(
         "*.di.*",
         "*.databinding.*",
         "*.BR",
         "*.BuildConfig",
         "*.*TriggerClass",
-        "*.DataBinderMapperImpl"
+        "*.DataBinderMapperImpl",
+        "*ComposableSingletons*",
     )
 
     val excludesAnnotations = listOf(

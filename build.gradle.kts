@@ -60,6 +60,9 @@ tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
 koverMerged {
     enable()
     filters {
+        projects {
+            excludes += CodeCoverage.excludesModules
+        }
         classes {
             excludes += CodeCoverage.excludesClasses
         }
