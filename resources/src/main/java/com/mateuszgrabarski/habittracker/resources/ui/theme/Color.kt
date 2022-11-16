@@ -4,78 +4,103 @@ import androidx.compose.material.Colors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val Purple50 = Color(0xFFede7f6)
-val Purple100 = Color(0xFFd1c4e9)
-val Purple200 = Color(0xFFb39ddb)
-val Purple300 = Color(0xFF9575cd)
-val Purple400 = Color(0xFF7e57c2)
-val Purple500 = Color(0xFF673ab7)
-val Purple600 = Color(0xFF5e35b1)
-val Purple700 = Color(0xFF512da8)
-val Purple800 = Color(0xFF4527a0)
-val Purple900 = Color(0xFF311b92)
-val PurpleA100 = Color(0xFFb388ff)
-val PurpleA200 = Color(0xFF7c4dff)
-val PurpleA400 = Color(0xFF651fff)
-val PurpleA700 = Color(0xFF6200ea)
+val md_theme_light_primary = Color(0xFF6847C0)
+val md_theme_light_onPrimary = Color(0xFFFFFFFF)
+val md_theme_light_primaryContainer = Color(0xFFE8DDFF)
+val md_theme_light_onPrimaryContainer = Color(0xFF21005D)
+val md_theme_light_secondary = Color(0xFF875200)
+val md_theme_light_onSecondary = Color(0xFFFFFFFF)
+val md_theme_light_secondaryContainer = Color(0xFFFFDDBA)
+val md_theme_light_onSecondaryContainer = Color(0xFF2B1700)
+val md_theme_light_tertiary = Color(0xFF6F43C0)
+val md_theme_light_onTertiary = Color(0xFFFFFFFF)
+val md_theme_light_tertiaryContainer = Color(0xFFEBDDFF)
+val md_theme_light_onTertiaryContainer = Color(0xFF250059)
+val md_theme_light_error = Color(0xFFBA1A1A)
+val md_theme_light_errorContainer = Color(0xFFFFDAD6)
+val md_theme_light_onError = Color(0xFFFFFFFF)
+val md_theme_light_onErrorContainer = Color(0xFF410002)
+val md_theme_light_background = Color(0xFFFFFBFF)
+val md_theme_light_onBackground = Color(0xFF1C1B1E)
+val md_theme_light_surface = Color(0xFFFFFBFF)
+val md_theme_light_onSurface = Color(0xFF1C1B1E)
+val md_theme_light_surfaceVariant = Color(0xFFE6E0EC)
+val md_theme_light_onSurfaceVariant = Color(0xFF48454E)
+val md_theme_light_outline = Color(0xFF79757F)
+val md_theme_light_inverseOnSurface = Color(0xFFF4EFF4)
+val md_theme_light_inverseSurface = Color(0xFF313033)
+val md_theme_light_inversePrimary = Color(0xFFCEBDFF)
+val md_theme_light_shadow = Color(0xFF000000)
+val md_theme_light_surfaceTint = Color(0xFF6847C0)
+val md_theme_light_outlineVariant = Color(0xFFCAC4CF)
+val md_theme_light_scrim = Color(0xFF000000)
 
-val Orange50 = Color(0xFFfff3e0)
-val Orange100 = Color(0xFFffe0b2)
-val Orange200 = Color(0xFFffcc80)
-val Orange300 = Color(0xFFffb74d)
-val Orange400 = Color(0xFFffa726)
-val Orange500 = Color(0xFFff9800)
-val Orange600 = Color(0xFFfb8c00)
-val Orange700 = Color(0xFFf57c00)
-val Orange800 = Color(0xFFef6c00)
-val Orange900 = Color(0xFFe65100)
-val OrangeA100 = Color(0xFFffd180)
-val OrangeA200 = Color(0xFFffab40)
-val OrangeA400 = Color(0xFFff9100)
-val OrangeA700 = Color(0xFFff6d00)
+val md_theme_dark_primary = Color(0xFFCEBDFF)
+val md_theme_dark_onPrimary = Color(0xFF390590)
+val md_theme_dark_primaryContainer = Color(0xFF502BA7)
+val md_theme_dark_onPrimaryContainer = Color(0xFFE8DDFF)
+val md_theme_dark_secondary = Color(0xFFFFB865)
+val md_theme_dark_onSecondary = Color(0xFF482A00)
+val md_theme_dark_secondaryContainer = Color(0xFF663D00)
+val md_theme_dark_onSecondaryContainer = Color(0xFFFFDDBA)
+val md_theme_dark_tertiary = Color(0xFFD3BBFF)
+val md_theme_dark_onTertiary = Color(0xFF3F008D)
+val md_theme_dark_tertiaryContainer = Color(0xFF5727A6)
+val md_theme_dark_onTertiaryContainer = Color(0xFFEBDDFF)
+val md_theme_dark_error = Color(0xFFFFB4AB)
+val md_theme_dark_errorContainer = Color(0xFF93000A)
+val md_theme_dark_onError = Color(0xFF690005)
+val md_theme_dark_onErrorContainer = Color(0xFFFFDAD6)
+val md_theme_dark_background = Color(0xFF1C1B1E)
+val md_theme_dark_onBackground = Color(0xFFE6E1E6)
+val md_theme_dark_surface = Color(0xFF1C1B1E)
+val md_theme_dark_onSurface = Color(0xFFE6E1E6)
+val md_theme_dark_surfaceVariant = Color(0xFF48454E)
+val md_theme_dark_onSurfaceVariant = Color(0xFFCAC4CF)
+val md_theme_dark_outline = Color(0xFF948F99)
+val md_theme_dark_inverseOnSurface = Color(0xFF1C1B1E)
+val md_theme_dark_inverseSurface = Color(0xFFE6E1E6)
+val md_theme_dark_inversePrimary = Color(0xFF6847C0)
+val md_theme_dark_shadow = Color(0xFF000000)
+val md_theme_dark_surfaceTint = Color(0xFFCEBDFF)
+val md_theme_dark_outlineVariant = Color(0xFF48454E)
+val md_theme_dark_scrim = Color(0xFF000000)
 
-val Grey50 = Color(0xFFfafafa)
-val Grey100 = Color(0xFFf5f5f5)
-val Grey200 = Color(0xFFeeeeee)
-val Grey300 = Color(0xFFe0e0e0)
-val Grey400 = Color(0xFFbdbdbd)
-val Grey500 = Color(0xFF9e9e9e)
-val Grey600 = Color(0xFF757575)
-val Grey700 = Color(0xFF616161)
-val Grey800 = Color(0xFF424242)
-val Grey900 = Color(0xFF212121)
-
-val primaryColor = Purple700
-val primaryLightColor = Purple300
-val secondaryColor = Orange700
-val secondaryLightColor = Orange300
-val primaryTextColor = Color(0xFFffffff)
-val secondaryTextColor = Color(0xFFfafafa)
+val seed = Color(0xFF512DA8)
+val CustomColor1 = Color(0xFF512DA8)
+val light_CustomColor1 = Color(0xFF6847C0)
+val light_onCustomColor1 = Color(0xFFFFFFFF)
+val light_CustomColor1Container = Color(0xFFE8DDFF)
+val light_onCustomColor1Container = Color(0xFF21005D)
+val dark_CustomColor1 = Color(0xFFCEBDFF)
+val dark_onCustomColor1 = Color(0xFF390590)
+val dark_CustomColor1Container = Color(0xFF502BA7)
+val dark_onCustomColor1Container = Color(0xFFE8DDFF)
 
 val Colors.splashScreenBackground: Color
     @Composable
-    get() = Purple700
+    get() = if (isDarkMode) md_theme_dark_primary else md_theme_light_primary
 
 val Colors.bottomBarBackground: Color
     @Composable
-    get() = Purple600
+    get() = if (isDarkMode) md_theme_dark_primary else md_theme_light_primary
 
 val Colors.bottomBarContent: Color
     @Composable
-    get() = primaryTextColor
+    get() = if (isDarkMode) md_theme_dark_onPrimary else md_theme_light_onPrimary
 
 val Colors.topBarBackground: Color
     @Composable
-    get() = Purple600
+    get() = if (isDarkMode) md_theme_dark_primary else md_theme_light_primary
 
 val Colors.topBarContent: Color
     @Composable
-    get() = primaryTextColor
+    get() = if (isDarkMode) md_theme_dark_onPrimary else md_theme_light_onPrimary
 
 val Colors.TopAppBarActionButton: Color
     @Composable
-    get() = Grey50
+    get() = if (isDarkMode) md_theme_dark_onPrimary else md_theme_light_onPrimary
 
 val Colors.BorderColor: Color
     @Composable
-    get() = Purple600
+    get() = if (isDarkMode) md_theme_dark_primary else md_theme_light_primary
