@@ -8,6 +8,7 @@ import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ExposedDropdownMenuBox
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,7 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mateuszgrabarski.habittracker.resources.R
 import com.mateuszgrabarski.habittracker.resources.ui.components.abstraction.ItemToSelect
-import com.mateuszgrabarski.habittracker.resources.ui.theme.Grey600
+import com.mateuszgrabarski.habittracker.resources.ui.theme.BorderColor
 
 @Composable
 fun SelectableSpinner(
@@ -53,13 +54,13 @@ fun SelectableSpinner(
                     Icon(
                         painter = painterResource(id = R.drawable.ic_arrow_up),
                         contentDescription = "",
-                        tint = Grey600
+                        tint = MaterialTheme.colors.BorderColor
                     )
                 } else {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_arrow_down),
                         contentDescription = "",
-                        tint = Grey600
+                        tint = MaterialTheme.colors.BorderColor
                     )
                 }
             }
@@ -80,7 +81,7 @@ fun SelectableSpinner(
                     ) {
                         val selectedText = stringResource(id = it.stringId)
                         if (selectedText == "-") {
-                            Text(text = selectedText, color = Grey600)
+                            Text(text = selectedText, color = MaterialTheme.colors.BorderColor)
                         } else {
                             Text(text = selectedText)
                         }
