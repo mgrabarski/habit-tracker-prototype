@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.viewmodel
+package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel
 
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 import io.kotest.core.spec.style.DescribeSpec

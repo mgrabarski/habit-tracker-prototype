@@ -26,10 +26,14 @@ class AddNewHabitDurationScreenViewModel(
     var selectedDuration by mutableStateOf(HabitDuration.getDefaultDuration())
         private set
 
-    var monthDays = mutableStateListOf<MonthDay>()
+    var monthDays = mutableStateListOf<MonthDay>().apply {
+        addAll(selectedDays.selectedDays)
+    }
         private set
 
-    var weekDays = mutableStateListOf<WeekDay>()
+    var weekDays = mutableStateListOf<WeekDay>().apply {
+        addAll(daysSelected.selectedDays)
+    }
         private set
 
     var startDate by mutableStateOf(SelectedDate.from(date = today))
@@ -38,13 +42,8 @@ class AddNewHabitDurationScreenViewModel(
     var endDate by mutableStateOf<SelectedDate?>(null)
         private set
 
-    var saveEnabled by mutableStateOf(false)
+    var saveEnabled by mutableStateOf(true)
         private set
-
-    init {
-        monthDays.addAll(selectedDays.selectedDays)
-        weekDays.addAll(daysSelected.selectedDays)
-    }
 
     fun updateSelectedState(day: MonthDay) {
         selectedDays.updateSelectedState(day = day)

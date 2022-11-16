@@ -11,8 +11,8 @@ class DurationValidator {
         weekDays: List<WeekDay>,
         monthDays: List<MonthDay>
     ): Boolean = when (type) {
-        HabitDuration.EveryDay -> weekDays.isEmpty() && monthDays.isEmpty()
-        HabitDuration.DaysInWeek -> monthDays.isEmpty() && weekDays.any { it.selected }
-        HabitDuration.DaysInMonth -> weekDays.isEmpty() && monthDays.any { it.selected }
+        HabitDuration.DaysInWeek -> weekDays.any { it.selected }
+        HabitDuration.DaysInMonth -> monthDays.any { it.selected }
+        else -> true
     }
 }
