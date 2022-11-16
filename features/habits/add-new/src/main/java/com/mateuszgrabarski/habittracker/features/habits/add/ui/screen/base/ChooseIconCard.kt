@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add
+package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable

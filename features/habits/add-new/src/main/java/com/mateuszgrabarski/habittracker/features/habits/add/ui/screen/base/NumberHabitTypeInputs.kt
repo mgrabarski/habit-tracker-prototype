@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add
+package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.viewmodel.NumberTypeInputsViewModel
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.NumberTypeInputsViewModel
 import com.mateuszgrabarski.habittracker.resources.R
 import org.koin.androidx.compose.getViewModel
 

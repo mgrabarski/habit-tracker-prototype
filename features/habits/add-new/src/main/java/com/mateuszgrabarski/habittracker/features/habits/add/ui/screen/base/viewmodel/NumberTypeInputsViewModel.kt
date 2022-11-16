@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.viewmodel
+package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
