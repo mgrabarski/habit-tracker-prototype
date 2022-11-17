@@ -21,5 +21,6 @@ include(
     ":features:habits:list",
     ":features:habits:add-new",
     ":business",
-    ":core:local-database"
+    ":core:local-database",
+    ":core:storage"
 )

@@ -13,5 +13,6 @@ object Modules {
 
     object Core {
         val localDatabase by lazy { ":core:local-database" }
+        val localStorage by lazy { ":core:storage" }
     }
 }

@@ -9,7 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.HabitDurationDefinition
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
-import com.mateuszgrabarski.habittracker.business.usecases.UseCaseResult
+import com.mateuszgrabarski.habittracker.business.usecases.UseCaseWithResult
 import com.mateuszgrabarski.habittracker.business.usecases.habit.add.StoreHabit
 import com.mateuszgrabarski.habittracker.features.habits.add.application.DurationValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.SelectedDate
@@ -111,8 +111,8 @@ class AddNewHabitDurationScreenViewModel(
             ).collect {
                 processingState = ProcessingState.Idle
                 when (it) {
-                    is UseCaseResult.Success -> onComplete()
-                    is UseCaseResult.GenericError -> {
+                    is UseCaseWithResult.Success -> onComplete()
+                    is UseCaseWithResult.GenericError -> {
                         // TODO: show toast with error
                     }
                 }

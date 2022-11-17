@@ -8,8 +8,8 @@ import com.mateuszgrabarski.habittracker.business.services.cache.impl.HabitCache
 import com.mateuszgrabarski.habittracker.business.services.cache.impl.UserCacheDataSourceImpl
 import com.mateuszgrabarski.habittracker.business.usecases.habit.add.StoreHabit
 import com.mateuszgrabarski.habittracker.business.usecases.habit.add.impl.StoreHabitImpl
-import com.mateuszgrabarski.habittracker.business.usecases.user.CreateUser
-import com.mateuszgrabarski.habittracker.business.usecases.user.impl.CreateUserImpl
+import com.mateuszgrabarski.habittracker.business.usecases.user.CreateUserIfNeeded
+import com.mateuszgrabarski.habittracker.business.usecases.user.impl.CreateUserIfNeededImpl
 import org.koin.dsl.module
 
 private val modelsModule = module {
@@ -23,7 +23,7 @@ private val servicesModule = module {
 }
 
 private val useCasesModule = module {
-    factory<CreateUser> { CreateUserImpl(get(), get()) }
+    factory<CreateUserIfNeeded> { CreateUserIfNeededImpl(get(), get(), get()) }
     factory<StoreHabit> { StoreHabitImpl(get(), get()) }
 }
 

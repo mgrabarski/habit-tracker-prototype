@@ -1,10 +1,10 @@
 package com.mateuszgrabarski.habittracker.business.usecases
 
-sealed class UseCaseResult<out T> {
+sealed class UseCaseWithoutResult {
 
-    data class Success<out T>(val value: T) : UseCaseResult<T>()
+    object Success : UseCaseWithoutResult()
 
     data class GenericError(
         val errorMessage: String? = null
-    ) : UseCaseResult<Nothing>()
+    ) : UseCaseWithoutResult()
 }

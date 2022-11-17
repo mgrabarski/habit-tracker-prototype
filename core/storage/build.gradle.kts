@@ -1,5 +1,4 @@
 import Libraries.baseDependencies
-import Libraries.uiAndCompose
 
 plugins {
     androidLibrary()
@@ -9,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mateuszgrabarski.habittracker.features.splash"
+    namespace = "com.mateuszgrabarski.habittracker.framework.storage"
 
     setLibraryConfig()
 
@@ -17,19 +16,18 @@ android {
         jvmTarget = Java.version.toString()
     }
 
-    buildFeatures {
-        compose = true
-    }
-
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
-}
 
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
+}
 dependencies {
     baseDependencies()
-    uiAndCompose()
+
+    implementation(AndroidDependencies.datastorePreferences)
 
     implementation(project(Modules.business))
-    implementation(project(Modules.resources))
 }

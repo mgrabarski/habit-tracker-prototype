@@ -6,9 +6,9 @@ import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabi
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitFactory
 import com.mateuszgrabarski.habittracker.business.services.cache.CacheResult
 import com.mateuszgrabarski.habittracker.business.services.cache.HabitCacheDataSource
-import com.mateuszgrabarski.habittracker.business.usecases.UseCaseResult
-import com.mateuszgrabarski.habittracker.business.usecases.UseCaseResult.GenericError
-import com.mateuszgrabarski.habittracker.business.usecases.UseCaseResult.Success
+import com.mateuszgrabarski.habittracker.business.usecases.UseCaseWithResult
+import com.mateuszgrabarski.habittracker.business.usecases.UseCaseWithResult.GenericError
+import com.mateuszgrabarski.habittracker.business.usecases.UseCaseWithResult.Success
 import com.mateuszgrabarski.habittracker.business.usecases.habit.add.StoreHabit
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -21,7 +21,7 @@ class StoreHabitImpl(
     override fun store(
         baseDefinition: NewHabitBaseDefinition,
         durationDefinition: HabitDurationDefinition
-    ): Flow<UseCaseResult<NewHabit>> = flow {
+    ): Flow<UseCaseWithResult<NewHabit>> = flow {
         val habit = factory.new(
             baseDefinition = baseDefinition,
             durationDefinition = durationDefinition

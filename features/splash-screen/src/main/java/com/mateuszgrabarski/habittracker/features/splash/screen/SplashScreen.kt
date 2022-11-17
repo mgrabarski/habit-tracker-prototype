@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.mateuszgrabarski.habittracker.resources.R.drawable.ic_launcher_foreground
 import com.mateuszgrabarski.habittracker.resources.ui.theme.splashScreenBackground
 import kotlinx.coroutines.delay
+import org.koin.androidx.compose.getViewModel
 
 private const val SPLASH_SCREEN_LOADING = 3_000L
 
@@ -32,6 +33,14 @@ private const val SPLASH_SCREEN_LOADING = 3_000L
 fun SplashScreen(
     navigateToHome: () -> Unit
 ) {
+    val viewModel = getViewModel<SplashScreenViewModel>()
+    viewModel.init()
+
+    Content(navigateToHome = navigateToHome)
+}
+
+@Composable
+private fun Content(navigateToHome: () -> Unit) {
     var startAnimation by remember { mutableStateOf(false) }
     val offsetState by animateDpAsState(
         targetValue = if (startAnimation) {

@@ -30,4 +30,5 @@ object Versions {
     const val materialNavigation = "0.27.0"
     const val kover = "0.6.1"
     const val room = "2.4.3"
+    const val datastorePreferences = "1.0.0"
 }
