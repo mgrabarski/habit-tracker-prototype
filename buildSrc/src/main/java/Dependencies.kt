@@ -24,6 +24,7 @@ object AndroidDependencies {
     val koinCompose by lazy { "io.insert-koin:koin-androidx-compose:${Versions.koinAndroidCompose}" }
     val roomRuntime by lazy { "androidx.room:room-runtime:${Versions.room}" }
     val roomCompiler by lazy { "androidx.room:room-compiler:${Versions.room}" }
+    val roomCoroutines by lazy { "androidx.room:room-ktx:${Versions.room}" }
 }
 
 object UnitTestDependencies {

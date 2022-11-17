@@ -1,6 +1,5 @@
 import Libraries.baseDependencies
 import Libraries.room
-import Libraries.uiAndCompose
 
 plugins {
     androidLibrary()
@@ -12,16 +11,10 @@ plugins {
 android {
     namespace = "com.mateuszgrabarski.habittracker.framework.database"
 
-    defaultConfig {
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += mapOf(
-                    "room.schemaLocation" to "$projectDir/schemas",
-                    "room.incremental" to "true",
-                    "room.expandProjection" to "true"
-                )
-            }
-        }
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
+        arg("room.incremental", "true")
+        arg("room.expandProjection", "true")
     }
 
     setLibraryConfig()

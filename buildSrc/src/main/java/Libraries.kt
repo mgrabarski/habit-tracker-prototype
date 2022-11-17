@@ -45,6 +45,7 @@ object Libraries {
 
     fun DependencyHandlerScope.room() {
         dependencies.add("implementation", AndroidDependencies.roomRuntime)
+        dependencies.add("implementation", AndroidDependencies.roomCoroutines)
         dependencies.add("ksp", AndroidDependencies.roomCompiler)
         dependencies.add("testImplementation", UnitTestDependencies.room)
     }
