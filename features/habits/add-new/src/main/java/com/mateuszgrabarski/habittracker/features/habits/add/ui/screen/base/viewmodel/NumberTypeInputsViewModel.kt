@@ -1,11 +1,11 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.viewmodel
+package com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.FilledHabitTypeInputs
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.NumberInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 
 class NumberTypeInputsViewModel : ViewModel() {
 

@@ -23,4 +23,12 @@
     <string name="habit_type_yes_or_no">Yes/No</string>
     <string name="habit_type_number">Number</string>
     <string name="habit_type_timer">Timer</string>
+    <string name="habit_duration_every_day">Every day</string>
+    <string name="habit_duration_week_days">Days in week</string>
+    <string name="habit_duration_month_days">Days in month</string>
+    <string name="add_habit_duration_title">When do you want to do it?</string>
+    <string name="add_habit_duration_start_date_title">Start date</string>
+    <string name="add_habit_duration_end_date_title">End date</string>
+    <string name="add_habit_duration_save">Save</string>
+    <string name="add_habit_duration_select_info">* Select at least one day</string>
 </resources>

@@ -6,10 +6,10 @@ import com.mateuszgrabarski.habittracker.business.habits.add.IconInfo
 import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription
 import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.NumberInputs
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedTime
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.TimeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedTime
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.TimeInputs
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.booleans.shouldBeFalse

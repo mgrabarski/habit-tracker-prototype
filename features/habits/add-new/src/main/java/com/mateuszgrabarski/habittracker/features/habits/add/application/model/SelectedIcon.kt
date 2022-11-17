@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.features.habits.add.ui.model
+package com.mateuszgrabarski.habittracker.features.habits.add.application.model
 
 import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
 

@@ -2,10 +2,10 @@ package com.mateuszgrabarski.habittracker.features.habits.add.application
 
 import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
 import com.mateuszgrabarski.habittracker.business.habits.HabitType
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.NumberInputs
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedIcon
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.SelectedTime
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.model.TimeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedTime
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.TimeInputs
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.booleans.shouldBeFalse
 import io.kotest.matchers.booleans.shouldBeTrue

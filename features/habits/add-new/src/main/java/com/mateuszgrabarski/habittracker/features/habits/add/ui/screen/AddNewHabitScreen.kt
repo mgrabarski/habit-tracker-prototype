@@ -23,9 +23,9 @@ import androidx.compose.ui.unit.dp
 import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.ChooseHabitIconDialog
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.ChooseIconCard
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.HabitTypeCard
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.add.NameAndDescriptionCard
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.ChooseIconCard
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.HabitTypeCard
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.NameAndDescriptionCard
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_next_btn
 import org.koin.androidx.compose.getViewModel
 
