@@ -19,7 +19,7 @@ private val useCasesModule = module {
     factory<StoreHabit> { StoreHabitImpl(get(), get()) }
 }
 
-val businessModule = listOf(
+val businessModules = listOf(
     modelsModule,
     servicesModule,
     useCasesModule

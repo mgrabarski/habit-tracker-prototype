@@ -20,9 +20,10 @@ val addHabitModule = module {
         AddNewHabitDurationScreenViewModel(
             habitBaseDefinition = get(),
             today = LocalDate.now(),
-            selectedDays = MonthSelectedDays(),
-            daysSelected = WeekSelectedDays(),
-            validator = get()
+            selectedMonthDays = MonthSelectedDays(),
+            selectedWeekDays = WeekSelectedDays(),
+            validator = get(),
+            storeHabit = get()
         )
     }
 
