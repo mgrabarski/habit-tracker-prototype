@@ -1,11 +1,11 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application
 
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
-import com.mateuszgrabarski.habittracker.features.habits.add.const.MIN_NUMBER_OF_CHARS_IN_HABIT_NAME
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.TimeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.const.MIN_NUMBER_OF_CHARS_IN_HABIT_NAME
 
 class BaseHabitInfoValidator {
 

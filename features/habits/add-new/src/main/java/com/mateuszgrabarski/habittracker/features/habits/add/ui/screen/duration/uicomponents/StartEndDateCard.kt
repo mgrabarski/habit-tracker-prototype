@@ -42,9 +42,7 @@ fun StartEndDateCard(
                 value = startDate,
                 readOnly = true,
                 enabled = false,
-                onValueChange = {
-
-                },
+                onValueChange = { },
                 label = {
                     Text(text = stringResource(id = R.string.add_habit_duration_start_date_title))
                 }
@@ -59,9 +57,7 @@ fun StartEndDateCard(
                 value = endDate,
                 readOnly = true,
                 enabled = false,
-                onValueChange = {
-
-                },
+                onValueChange = { },
                 label = {
                     Text(text = stringResource(id = R.string.add_habit_duration_end_date_title))
                 }

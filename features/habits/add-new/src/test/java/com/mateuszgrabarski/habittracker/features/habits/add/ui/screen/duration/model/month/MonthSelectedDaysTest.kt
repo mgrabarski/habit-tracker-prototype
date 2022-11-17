@@ -25,7 +25,6 @@ class MonthSelectedDaysTest : DescribeSpec({
 
     describe("update selected state of day") {
 
-
         it("update to selected") {
             val day = MonthDay(dayNumber = 1, selected = false)
 

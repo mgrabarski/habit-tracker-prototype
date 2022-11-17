@@ -1,10 +1,10 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.ui
 
-import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
-import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.IconInfo
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon

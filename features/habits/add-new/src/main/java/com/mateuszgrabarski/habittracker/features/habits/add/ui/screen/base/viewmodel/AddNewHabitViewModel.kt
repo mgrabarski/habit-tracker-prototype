@@ -4,10 +4,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.IconInfo
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription.NotNeeded
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon

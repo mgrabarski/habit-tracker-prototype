@@ -2,8 +2,8 @@ package com.mateuszgrabarski.habittracker.features.habits.add.di
 
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.application.DurationValidator
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.viewmodels.ChooseHabitIconDialogViewModel
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.NumberTypeInputsViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.AddNewHabitDurationScreenViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.month.MonthSelectedDays

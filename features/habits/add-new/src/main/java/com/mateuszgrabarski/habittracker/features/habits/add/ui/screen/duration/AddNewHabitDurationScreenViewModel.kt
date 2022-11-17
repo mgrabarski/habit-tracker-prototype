@@ -112,9 +112,7 @@ class AddNewHabitDurationScreenViewModel(
                 processingState = ProcessingState.Idle
                 when (it) {
                     is UseCaseWithResult.Success -> onComplete()
-                    is UseCaseWithResult.GenericError -> {
-                        // TODO: show toast with error
-                    }
+                    is UseCaseWithResult.GenericError -> { }
                 }
             }
         }
