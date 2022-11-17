@@ -45,7 +45,7 @@ class AddNewHabitDurationScreenViewModel(
     var saveEnabled by mutableStateOf(true)
         private set
 
-    fun updateSelectedState(day: MonthDay) {
+    fun updateSelectedMonthDay(day: MonthDay) {
         selectedDays.updateSelectedState(day = day)
         monthDays.apply {
             clear()

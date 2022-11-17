@@ -123,7 +123,7 @@ private fun Content(
                 HabitDuration.DaysInMonth -> DaysInMonthCard(
                     monthDays = viewModel.monthDays,
                     updateSelectedState = {
-                        viewModel.updateSelectedState(day = it)
+                        viewModel.updateSelectedMonthDay(day = it)
                     }
                 )
                 else -> Unit
