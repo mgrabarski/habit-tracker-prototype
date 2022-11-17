@@ -20,5 +20,6 @@ include(
     ":features:splash-screen",
     ":features:habits:list",
     ":features:habits:add-new",
-    ":business"
+    ":business",
+    ":core:local-database"
 )

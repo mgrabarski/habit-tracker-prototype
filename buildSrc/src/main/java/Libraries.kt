@@ -42,4 +42,10 @@ object Libraries {
     private fun DependencyHandlerScope.mockk() {
         dependencies.add("testImplementation", UnitTestDependencies.mockk)
     }
+
+    fun DependencyHandlerScope.room() {
+        dependencies.add("implementation", AndroidDependencies.roomRuntime)
+        dependencies.add("ksp", AndroidDependencies.roomCompiler)
+        dependencies.add("testImplementation", UnitTestDependencies.room)
+    }
 }

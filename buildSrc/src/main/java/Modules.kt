@@ -10,4 +10,8 @@ object Modules {
             val addNew by lazy { ":features:habits:add-new" }
         }
     }
+
+    object Core {
+        val localDatabase by lazy { ":core:local-database" }
+    }
 }
