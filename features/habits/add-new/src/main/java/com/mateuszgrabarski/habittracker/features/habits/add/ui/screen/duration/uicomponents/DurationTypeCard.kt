@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.business.habits.HabitDuration
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
 import com.mateuszgrabarski.habittracker.resources.R
 
 @Composable

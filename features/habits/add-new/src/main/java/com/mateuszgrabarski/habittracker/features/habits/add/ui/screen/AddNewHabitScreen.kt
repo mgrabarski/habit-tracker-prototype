@@ -20,9 +20,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.ChooseHabitIconDialog
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.ChooseIconCard
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.HabitTypeCard
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.NameAndDescriptionCard

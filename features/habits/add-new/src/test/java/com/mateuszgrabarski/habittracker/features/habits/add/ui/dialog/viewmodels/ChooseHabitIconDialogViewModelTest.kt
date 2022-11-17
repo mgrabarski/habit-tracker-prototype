@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.viewmodels
 
-import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec

@@ -1,4 +1,4 @@
-package com.mateuszgrabarski.habittracker.business.habits
+package com.mateuszgrabarski.habittracker.business.data.models.habits.options
 
 import androidx.annotation.StringRes
 import com.mateuszgrabarski.habittracker.resources.R.string.habit_type_none

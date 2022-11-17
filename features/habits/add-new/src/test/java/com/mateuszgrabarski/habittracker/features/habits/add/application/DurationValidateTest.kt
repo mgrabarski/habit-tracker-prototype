@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application
 
-import com.mateuszgrabarski.habittracker.business.habits.HabitDuration
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.month.MonthDay
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.week.WeekDay
 import io.kotest.core.spec.style.DescribeSpec

@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application.model
 
-import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe

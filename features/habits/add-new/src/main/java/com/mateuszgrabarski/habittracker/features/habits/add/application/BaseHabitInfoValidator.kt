@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application
 
-import com.mateuszgrabarski.habittracker.business.habits.HabitType
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.const.MIN_NUMBER_OF_CHARS_IN_HABIT_NAME
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.FilledHabitTypeInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs

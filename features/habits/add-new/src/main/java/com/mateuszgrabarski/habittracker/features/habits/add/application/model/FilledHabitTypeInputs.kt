@@ -1,8 +1,8 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application.model
 
-import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription
-import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription.Number
-import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription.Time
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription.Number
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription.Time
 
 sealed class FilledHabitTypeInputs {
     abstract fun toInputDescription(): InputDescription

@@ -1,15 +1,16 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.ui
 
-import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
-import com.mateuszgrabarski.habittracker.business.habits.HabitType
-import com.mateuszgrabarski.habittracker.business.habits.add.IconInfo
-import com.mateuszgrabarski.habittracker.business.habits.add.InputDescription
-import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.IconInfo
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.InputDescription
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedTime
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.TimeInputs
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.AddNewHabitViewModel
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.booleans.shouldBeFalse
