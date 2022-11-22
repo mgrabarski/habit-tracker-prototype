@@ -37,4 +37,5 @@ dependencies {
     room()
 
     implementation(project(Modules.business))
+    implementation(project(Modules.resources))
 }
