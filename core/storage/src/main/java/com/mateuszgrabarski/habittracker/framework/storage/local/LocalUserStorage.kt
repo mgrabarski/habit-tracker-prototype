@@ -10,7 +10,7 @@ import com.mateuszgrabarski.habittracker.framework.storage.userStorage
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class LocalUserStorage(
+internal class LocalUserStorage(
     private val context: Context
 ) : UserStorage {
 

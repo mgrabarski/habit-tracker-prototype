@@ -6,4 +6,4 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.mateuszgrabarski.habittracker.framework.storage.PreferencesNames.User
 
-val Context.userStorage: DataStore<Preferences> by preferencesDataStore(name = User)
+internal val Context.userStorage: DataStore<Preferences> by preferencesDataStore(name = User)
