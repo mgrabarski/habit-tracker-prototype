@@ -6,7 +6,6 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
-import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.business.data.types.Id
 import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit
 import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.Columns
@@ -46,4 +45,3 @@ data class HabitIconEntity(
     @ColumnInfo(name = Columns.IconColor)
     val color: Int
 )
-
