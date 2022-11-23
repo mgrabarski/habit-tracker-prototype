@@ -3,6 +3,7 @@ package com.mateuszgrabarski.habittracker.business.data.models.habits.add
 import android.os.Parcelable
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitIconData
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData
+import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData.*
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import kotlinx.parcelize.Parcelize
@@ -35,7 +36,7 @@ sealed class InputDescription : Parcelable {
 
     object NotNeeded : InputDescription() {
 
-        override fun toHabitTypeData(): HabitTypeData = HabitTypeData.NotNeededData
+        override fun toHabitTypeData(): HabitTypeData = NotNeededData
     }
 
     data class Number(
@@ -43,7 +44,7 @@ sealed class InputDescription : Parcelable {
         val unit: String
     ) : InputDescription() {
 
-        override fun toHabitTypeData(): HabitTypeData = HabitTypeData.NumberData(
+        override fun toHabitTypeData(): HabitTypeData = NumberData(
             goal = goal,
             unit = unit
         )
@@ -53,7 +54,7 @@ sealed class InputDescription : Parcelable {
         val hours: Int,
         val minutes: Int
     ) : InputDescription() {
-        override fun toHabitTypeData(): HabitTypeData = HabitTypeData.TimeData(
+        override fun toHabitTypeData(): HabitTypeData = TimeData(
             hours = hours,
             minutes = minutes
         )

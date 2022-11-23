@@ -6,6 +6,7 @@ import com.mateuszgrabarski.habittracker.business.services.cache.CacheResult.Gen
 import com.mateuszgrabarski.habittracker.business.services.cache.CacheResult.Success
 import com.mateuszgrabarski.habittracker.business.services.cache.HabitCacheDataSource
 import com.mateuszgrabarski.habittracker.business.services.cache.abstraction.HabitDaoService
+import com.mateuszgrabarski.habittracker.business.usecases.Errors.CACHE_ERROR
 
 class HabitCacheDataSourceImpl(
     private val dao: HabitDaoService
@@ -15,7 +16,7 @@ class HabitCacheDataSourceImpl(
         val numberOfInserts = dao.insertNewHabit(habit = habit)
         return when {
             numberOfInserts > 0 -> Success(value = numberOfInserts)
-            else -> GenericError(errorMessage = "cache error")
+            else -> GenericError(errorMessage = CACHE_ERROR)
         }
     }
 }
