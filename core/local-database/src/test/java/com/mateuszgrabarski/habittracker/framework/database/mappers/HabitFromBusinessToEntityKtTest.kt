@@ -7,10 +7,14 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.NumberDataE
 import com.mateuszgrabarski.habittracker.framework.database.entities.TimeDataEntity
 import com.mateuszgrabarski.habittracker.framework.database.fixtures.NewHabitFixtures.anyNewHabit
 import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.booleans.shouldBeFalse
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.shouldBe
+import java.time.LocalDateTime
 
 class HabitFromBusinessToEntityKtTest : DescribeSpec({
+
+    val now = LocalDateTime.now()
 
     describe("map from business to entities relations") {
 
@@ -19,7 +23,7 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
             it("is filled") {
                 val habit = anyNewHabit()
 
-                val result = habit.fromBusinessToEntitiesRelations()
+                val result = habit.fromBusinessToEntitiesRelations(createDate = now)
 
                 result.habit.id shouldBe habit.id
                 result.habit.name shouldBe habit.name
@@ -28,6 +32,8 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
                     image = habit.icon.icon,
                     color = habit.icon.color
                 )
+                result.habit.createDate shouldBe now
+                result.habit.archived.shouldBeFalse()
                 result.habit.userId shouldBe habit.ownerId
             }
         }
@@ -40,7 +46,7 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
                     inputs = HabitTypeData.NotNeededData
                 )
 
-                val result = habit.fromBusinessToEntitiesRelations()
+                val result = habit.fromBusinessToEntitiesRelations(createDate = now)
 
                 result.typeDetails.type shouldBe HabitType.YesOrNo
                 result.typeDetails.numberData.shouldBeNull()
@@ -56,7 +62,7 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
                     )
                 )
 
-                val result = habit.fromBusinessToEntitiesRelations()
+                val result = habit.fromBusinessToEntitiesRelations(createDate = now)
 
                 result.typeDetails.type shouldBe HabitType.Number
                 result.typeDetails.numberData shouldBe NumberDataEntity(
@@ -75,7 +81,7 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
                     )
                 )
 
-                val result = habit.fromBusinessToEntitiesRelations()
+                val result = habit.fromBusinessToEntitiesRelations(createDate = now)
 
                 result.typeDetails.type shouldBe HabitType.Timer
                 result.typeDetails.numberData.shouldBeNull()
@@ -91,7 +97,7 @@ class HabitFromBusinessToEntityKtTest : DescribeSpec({
             it("should be mapped") {
                 val habit = anyNewHabit()
 
-                val result = habit.fromBusinessToEntitiesRelations()
+                val result = habit.fromBusinessToEntitiesRelations(createDate = now)
 
                 result.duration.startDate shouldBe habit.startDate
                 result.duration.endDate shouldBe habit.endDate
