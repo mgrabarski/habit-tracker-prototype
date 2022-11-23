@@ -12,6 +12,7 @@ import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.Co
 import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.ForeignKeys
 import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.Indexes
 import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.Prefix
+import java.time.LocalDateTime
 
 @Entity(
     tableName = TableHabit.TableName,
@@ -20,7 +21,7 @@ import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabit.Pr
         Index(value = [Indexes.UserId])
     ]
 )
-data class HabitEntity(
+internal data class HabitEntity(
     @PrimaryKey
     @ColumnInfo(name = Columns.Id)
     val id: Id,
@@ -34,11 +35,17 @@ data class HabitEntity(
     @Embedded(prefix = Prefix.IconPrefix)
     val icon: HabitIconEntity,
 
+    @ColumnInfo(name = Columns.CreateTime)
+    val createDate: LocalDateTime,
+
+    @ColumnInfo(name = Columns.Archived)
+    val archived: Boolean,
+
     @ColumnInfo(name = ForeignKeys.UserId)
     val userId: Id
 )
 
-data class HabitIconEntity(
+internal data class HabitIconEntity(
     @ColumnInfo(name = Columns.IconImage)
     val image: HabitIcon,
 

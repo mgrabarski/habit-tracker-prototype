@@ -6,7 +6,7 @@ import com.mateuszgrabarski.habittracker.framework.database.application.LocalTim
 import com.mateuszgrabarski.habittracker.framework.database.daos.HabitAndDetailsRelationDao
 import com.mateuszgrabarski.habittracker.framework.database.mappers.fromBusinessToEntitiesRelations
 
-class LocalHabitDaoService(
+internal class LocalHabitDaoService(
     private val timeProvider: LocalTimeProvider,
     private val dao: HabitAndDetailsRelationDao
 ) : HabitDaoService {

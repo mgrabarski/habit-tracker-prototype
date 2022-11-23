@@ -7,7 +7,7 @@ import com.mateuszgrabarski.habittracker.business.data.types.Id
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitTypeDetailsEntity
 
 @Dao
-interface HabitTypeDetailsDao {
+internal interface HabitTypeDetailsDao {
 
     @Insert
     suspend fun insert(details: HabitTypeDetailsEntity): Long

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1a26aa62ce3ae6f29f43e238886379da",
+    "identityHash": "dde50cdc0e115d0554ccaf6ae107092d",
     "entities": [
       {
         "tableName": "user",
@@ -42,7 +42,7 @@
       },
       {
         "tableName": "habit",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `user_id` TEXT NOT NULL, `icon_image` TEXT NOT NULL, `icon_color` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `create_time` TEXT NOT NULL, `archived` INTEGER NOT NULL, `user_id` TEXT NOT NULL, `icon_image` TEXT NOT NULL, `icon_color` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -60,6 +60,18 @@
             "fieldPath": "description",
             "columnName": "description",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createDate",
+            "columnName": "create_time",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archived",
+            "columnName": "archived",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -287,7 +299,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a26aa62ce3ae6f29f43e238886379da')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dde50cdc0e115d0554ccaf6ae107092d')"
     ]
   }
 }

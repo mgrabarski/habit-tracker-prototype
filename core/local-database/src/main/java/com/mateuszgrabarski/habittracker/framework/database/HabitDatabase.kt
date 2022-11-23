@@ -39,7 +39,7 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.UserEntity
         IdConverter::class
     ]
 )
-abstract class HabitDatabase : RoomDatabase() {
+internal abstract class HabitDatabase : RoomDatabase() {
 
     abstract fun provideUserDao(): UserDao
 

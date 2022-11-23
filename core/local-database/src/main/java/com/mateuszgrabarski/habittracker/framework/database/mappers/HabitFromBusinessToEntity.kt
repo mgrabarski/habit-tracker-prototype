@@ -10,8 +10,11 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.HabitTypeDe
 import com.mateuszgrabarski.habittracker.framework.database.entities.NumberDataEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.TimeDataEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.relations.HabitAndDetailsRelation
+import java.time.LocalDateTime
 
-fun NewHabit.fromBusinessToEntitiesRelations() = HabitAndDetailsRelation(
+internal fun NewHabit.fromBusinessToEntitiesRelations(
+    createDate: LocalDateTime
+) = HabitAndDetailsRelation(
     habit = HabitEntity(
         id = id,
         name = name,
@@ -20,6 +23,8 @@ fun NewHabit.fromBusinessToEntitiesRelations() = HabitAndDetailsRelation(
             image = icon.icon,
             color = icon.color
         ),
+        createDate = createDate,
+        archived = false,
         userId = ownerId
     ),
     typeDetails = HabitTypeDetailsEntity(

@@ -30,7 +30,7 @@ import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabitTyp
         Index(value = [Indexes.HabitId]),
     ]
 )
-data class HabitTypeDetailsEntity(
+internal data class HabitTypeDetailsEntity(
     @PrimaryKey
     @ColumnInfo(name = Columns.Id)
     val id: Id,
@@ -48,7 +48,7 @@ data class HabitTypeDetailsEntity(
     val habitId: Id
 )
 
-data class NumberDataEntity(
+internal data class NumberDataEntity(
     @ColumnInfo(name = Columns.NumberGoal)
     val goal: Double,
 
@@ -56,7 +56,7 @@ data class NumberDataEntity(
     val unit: String
 )
 
-data class TimeDataEntity(
+internal data class TimeDataEntity(
     val hours: Int,
     val minutes: Int
 )

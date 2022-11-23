@@ -5,7 +5,7 @@ import androidx.room.Insert
 import com.mateuszgrabarski.habittracker.framework.database.entities.UserEntity
 
 @Dao
-interface UserDao {
+internal interface UserDao {
 
     @Insert
     suspend fun insert(user: UserEntity): Long

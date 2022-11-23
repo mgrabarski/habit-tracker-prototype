@@ -3,7 +3,7 @@ package com.mateuszgrabarski.habittracker.framework.database.converters
 import androidx.room.TypeConverter
 import java.time.DayOfWeek
 
-class DayOfWeekConverter {
+internal class DayOfWeekConverter {
 
     @TypeConverter
     fun toList(dateString: String?): List<DayOfWeek> =

@@ -2,7 +2,7 @@ package com.mateuszgrabarski.habittracker.framework.database.converters
 
 import androidx.room.TypeConverter
 
-class ListOfIntsConverter {
+internal class ListOfIntsConverter {
 
     @TypeConverter
     fun toList(dateString: String?): List<Int> =

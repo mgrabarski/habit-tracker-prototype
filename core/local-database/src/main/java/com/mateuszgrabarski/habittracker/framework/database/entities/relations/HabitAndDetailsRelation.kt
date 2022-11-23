@@ -9,7 +9,7 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.HabitDurati
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitTypeDetailsEntity
 
-data class HabitAndDetailsRelation(
+internal data class HabitAndDetailsRelation(
     @Embedded val habit: HabitEntity,
     @Relation(
         parentColumn = TableHabit.Columns.Id,

@@ -30,7 +30,7 @@ import java.time.LocalDate
         Index(value = [Indexes.HabitId])
     ]
 )
-data class HabitDurationEntity(
+internal data class HabitDurationEntity(
     @PrimaryKey
     @ColumnInfo(name = Columns.Id)
     val id: Id,

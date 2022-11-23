@@ -4,7 +4,7 @@ import androidx.room.TypeConverter
 import java.time.LocalDateTime
 import java.time.format.DateTimeParseException
 
-class LocalDateTimeConverter {
+internal class LocalDateTimeConverter {
 
     @TypeConverter
     fun toDate(dateString: String?) = when {

@@ -11,7 +11,7 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.HabitTypeDe
 import com.mateuszgrabarski.habittracker.framework.database.entities.relations.HabitAndDetailsRelation
 
 @Dao
-abstract class HabitAndDetailsRelationDao {
+internal abstract class HabitAndDetailsRelationDao {
 
     suspend fun insert(habit: HabitAndDetailsRelation) {
         insertHabit(habit = habit.habit)

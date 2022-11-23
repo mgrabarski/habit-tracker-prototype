@@ -2,6 +2,6 @@ package com.mateuszgrabarski.habittracker.framework.database.application
 
 import java.time.LocalDateTime
 
-interface LocalTimeProvider {
+internal interface LocalTimeProvider {
     fun now(): LocalDateTime
 }

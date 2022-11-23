@@ -31,6 +31,8 @@ internal object Tables {
             const val Description = "description"
             const val IconImage = "image"
             const val IconColor = "color"
+            const val CreateTime = "create_time"
+            const val Archived = "archived"
         }
 
         object Prefix {

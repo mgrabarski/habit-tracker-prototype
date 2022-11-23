@@ -16,7 +16,7 @@ import java.time.LocalDateTime
         Index(value = [Indexes.Id])
     ]
 )
-data class UserEntity(
+internal data class UserEntity(
     @PrimaryKey
     @ColumnInfo(name = Columns.Id)
     val id: Id,

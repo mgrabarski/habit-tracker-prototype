@@ -4,7 +4,7 @@ import com.mateuszgrabarski.habittracker.framework.database.application.LocalTim
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
-class LocalTimeProviderImpl(
+internal class LocalTimeProviderImpl(
     private val zone: ZoneOffset
 ) : LocalTimeProvider {
 
