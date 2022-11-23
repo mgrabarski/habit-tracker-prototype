@@ -24,7 +24,7 @@ private val servicesModule = module {
 
 private val useCasesModule = module {
     factory<CreateUserIfNeeded> { CreateUserIfNeededImpl(get(), get(), get()) }
-    factory<StoreHabit> { StoreHabitImpl(get(), get()) }
+    factory<StoreHabit> { StoreHabitImpl(get(), get(), get()) }
 }
 
 val businessModules = listOf(

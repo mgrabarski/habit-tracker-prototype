@@ -6,9 +6,11 @@ import com.mateuszgrabarski.habittracker.business.data.types.Id
 class NewHabitFactory {
 
     fun new(
+        userId: Id,
         baseDefinition: NewHabitBaseDefinition,
         durationDefinition: HabitDurationDefinition
     ) = NewHabit(
+        ownerId = userId,
         id = Id.randomUUID(),
         name = baseDefinition.name,
         description = baseDefinition.description,

@@ -7,6 +7,7 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 
 data class NewHabit(
+    val ownerId: Id,
     val id: Id,
     val name: String,
     val description: String,
