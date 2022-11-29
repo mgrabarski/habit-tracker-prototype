@@ -133,9 +133,7 @@ private fun Content(
                 modifier = Modifier.fillMaxWidth(),
                 enabled = viewModel.saveEnabled,
                 onClick = {
-                    viewModel.saveHabit {
-
-                    }
+                    viewModel.saveHabit { }
                 }
             ) {
                 Text(text = stringResource(id = add_habit_duration_save))
