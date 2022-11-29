@@ -3,7 +3,9 @@ package com.mateuszgrabarski.habittracker.business.data.models.habits.add
 import android.os.Parcelable
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitIconData
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData
-import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData.*
+import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData.NotNeededData
+import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData.NumberData
+import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData.TimeData
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import kotlinx.parcelize.Parcelize

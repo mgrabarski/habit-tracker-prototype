@@ -7,6 +7,7 @@ import com.mateuszgrabarski.habittracker.business.data.models.habits.options.Hab
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration.DaysInMonth
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
+import com.mateuszgrabarski.habittracker.business.usecases.habit.add.StoreHabit
 import com.mateuszgrabarski.habittracker.features.habits.add.application.DurationValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.SelectedDate
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.month.MonthDay
@@ -29,6 +30,7 @@ class AddNewHabitDurationScreenViewModelTest : DescribeSpec({
     val today = LocalDate.of(2022, 11, 16)
 
     val validator: DurationValidator = mockk(relaxed = true)
+    val storeHabitUseCase: StoreHabit = mockk()
 
     lateinit var sut: AddNewHabitDurationScreenViewModel
 
@@ -37,9 +39,10 @@ class AddNewHabitDurationScreenViewModelTest : DescribeSpec({
         sut = AddNewHabitDurationScreenViewModel(
             habitBaseDefinition = anyNewHabitBaseDefinition(),
             today = today,
-            selectedDays = MonthSelectedDays(),
-            daysSelected = WeekSelectedDays(),
-            validator = validator
+            selectedMonthDays = MonthSelectedDays(),
+            selectedWeekDays = WeekSelectedDays(),
+            validator = validator,
+            storeHabit = storeHabitUseCase
         )
     }
 
