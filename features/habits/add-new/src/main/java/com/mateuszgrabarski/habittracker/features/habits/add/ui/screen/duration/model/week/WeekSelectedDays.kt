@@ -16,4 +16,6 @@ data class WeekSelectedDays(
             )
         }
     }
+
+    fun toDataDays(): List<Int> = days.filter { it.selected }.map { it.day.number }
 }

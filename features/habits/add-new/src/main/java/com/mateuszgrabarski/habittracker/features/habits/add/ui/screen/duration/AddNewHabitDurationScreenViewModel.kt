@@ -5,34 +5,41 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.mateuszgrabarski.habittracker.business.habits.HabitDuration
-import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
+import androidx.lifecycle.viewModelScope
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.HabitDurationDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
+import com.mateuszgrabarski.habittracker.business.usecases.UseCaseWithResult
+import com.mateuszgrabarski.habittracker.business.usecases.habit.add.StoreHabit
 import com.mateuszgrabarski.habittracker.features.habits.add.application.DurationValidator
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.SelectedDate
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.month.MonthDay
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.month.MonthSelectedDays
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.week.WeekDay
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.week.WeekSelectedDays
+import com.mateuszgrabarski.habittracker.resources.ui.components.ProcessingState
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class AddNewHabitDurationScreenViewModel(
     private val habitBaseDefinition: NewHabitBaseDefinition,
     today: LocalDate,
-    private val selectedDays: MonthSelectedDays,
-    private val daysSelected: WeekSelectedDays,
-    private val validator: DurationValidator
+    private val selectedMonthDays: MonthSelectedDays,
+    private val selectedWeekDays: WeekSelectedDays,
+    private val validator: DurationValidator,
+    private val storeHabit: StoreHabit
 ) : ViewModel() {
 
     var selectedDuration by mutableStateOf(HabitDuration.getDefaultDuration())
         private set
 
     var monthDays = mutableStateListOf<MonthDay>().apply {
-        addAll(selectedDays.selectedDays)
+        addAll(selectedMonthDays.selectedDays)
     }
         private set
 
     var weekDays = mutableStateListOf<WeekDay>().apply {
-        addAll(daysSelected.selectedDays)
+        addAll(selectedWeekDays.selectedDays)
     }
         private set
 
@@ -45,20 +52,23 @@ class AddNewHabitDurationScreenViewModel(
     var saveEnabled by mutableStateOf(true)
         private set
 
+    var processingState by mutableStateOf(ProcessingState.Idle)
+        private set
+
     fun updateSelectedMonthDay(day: MonthDay) {
-        selectedDays.updateSelectedState(day = day)
+        selectedMonthDays.updateSelectedState(day = day)
         monthDays.apply {
             clear()
-            addAll(selectedDays.selectedDays)
+            addAll(selectedMonthDays.selectedDays)
         }
         validate()
     }
 
     fun updateSelectedWeekDay(day: WeekDay) {
-        daysSelected.updateSelectedState(day = day)
+        selectedWeekDays.updateSelectedState(day = day)
         weekDays.apply {
             clear()
-            addAll(daysSelected.selectedDays)
+            addAll(selectedWeekDays.selectedDays)
         }
         validate()
     }
@@ -87,7 +97,25 @@ class AddNewHabitDurationScreenViewModel(
     }
 
     fun saveHabit(onComplete: () -> Unit) {
-        onComplete()
+        processingState = ProcessingState.Processing
+        viewModelScope.launch {
+            storeHabit.store(
+                baseDefinition = habitBaseDefinition,
+                durationDefinition = HabitDurationDefinition(
+                    startDate = startDate.toDate(),
+                    endDate?.toDate(),
+                    duration = selectedDuration,
+                    weekDays = selectedMonthDays.toDataDays(),
+                    monthDays = selectedWeekDays.toDataDays()
+                )
+            ).collect {
+                processingState = ProcessingState.Idle
+                when (it) {
+                    is UseCaseWithResult.Success -> onComplete()
+                    is UseCaseWithResult.GenericError -> { }
+                }
+            }
+        }
     }
 
     private fun validate() {

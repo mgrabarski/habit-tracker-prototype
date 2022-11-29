@@ -13,4 +13,7 @@ data class Day(
             TextStyle.SHORT,
             Locale.getDefault()
         )
+
+    val number: Int
+        get() = day.value
 }

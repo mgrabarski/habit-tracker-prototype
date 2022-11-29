@@ -21,7 +21,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.features.habits.add.R
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.model.week.WeekDay
 import com.mateuszgrabarski.habittracker.resources.R.string.add_habit_duration_select_info
 

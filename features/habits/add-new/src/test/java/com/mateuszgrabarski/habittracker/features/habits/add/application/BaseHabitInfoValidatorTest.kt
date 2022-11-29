@@ -1,7 +1,7 @@
 package com.mateuszgrabarski.habittracker.features.habits.add.application
 
-import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
-import com.mateuszgrabarski.habittracker.business.habits.HabitType
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.NumberInputs
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedTime

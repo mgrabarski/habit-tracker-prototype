@@ -7,6 +7,7 @@ data class SelectedDate(
     val month: Int,
     val dayOfMonth: Int
 ) {
+    fun toDate(): LocalDate = LocalDate.of(year, month, dayOfMonth)
 
     val monthValue: Int
         get() = month - 1

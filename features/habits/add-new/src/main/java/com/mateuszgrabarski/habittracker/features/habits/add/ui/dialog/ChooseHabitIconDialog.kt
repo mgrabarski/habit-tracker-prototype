@@ -24,10 +24,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.mateuszgrabarski.habittracker.business.habits.HabitIcon
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
+import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_COLORS_IN_ROW
 import com.mateuszgrabarski.habittracker.features.habits.add.const.NUMBER_OF_ICONS_IN_ROW
-import com.mateuszgrabarski.habittracker.features.habits.add.application.model.SelectedIcon
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.dialog.viewmodels.ChooseHabitIconDialogViewModel
 import com.mateuszgrabarski.habittracker.resources.ui.theme.availableColors
 import org.koin.androidx.compose.getViewModel

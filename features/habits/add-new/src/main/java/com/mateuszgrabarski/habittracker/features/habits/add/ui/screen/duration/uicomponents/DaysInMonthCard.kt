@@ -117,6 +117,7 @@ private fun NotSelectedDay(
     }
 }
 
+@Suppress("MagicNumber")
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Preview(showSystemUi = true)

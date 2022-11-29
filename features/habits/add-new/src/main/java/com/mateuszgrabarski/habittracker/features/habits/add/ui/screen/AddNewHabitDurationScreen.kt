@@ -14,8 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.mateuszgrabarski.habittracker.business.habits.HabitDuration
-import com.mateuszgrabarski.habittracker.business.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.AddNewHabitDurationScreenViewModel
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.uicomponents.DayInWeekCard
 import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.duration.uicomponents.DaysInMonthCard
@@ -133,9 +133,7 @@ private fun Content(
                 modifier = Modifier.fillMaxWidth(),
                 enabled = viewModel.saveEnabled,
                 onClick = {
-                    viewModel.saveHabit {
-
-                    }
+                    viewModel.saveHabit { }
                 }
             ) {
                 Text(text = stringResource(id = add_habit_duration_save))

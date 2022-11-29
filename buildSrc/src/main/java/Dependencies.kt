@@ -22,6 +22,10 @@ object AndroidDependencies {
     val destinationsKsp by lazy { "io.github.raamcosta.compose-destinations:ksp:${Versions.destination}" }
     val koinCore by lazy { "io.insert-koin:koin-android:${Versions.koinAndroid}" }
     val koinCompose by lazy { "io.insert-koin:koin-androidx-compose:${Versions.koinAndroidCompose}" }
+    val roomRuntime by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    val roomCompiler by lazy { "androidx.room:room-compiler:${Versions.room}" }
+    val roomCoroutines by lazy { "androidx.room:room-ktx:${Versions.room}" }
+    val datastorePreferences by lazy { "androidx.datastore:datastore-preferences:${Versions.datastorePreferences}" }
 }
 
 object UnitTestDependencies {
@@ -36,6 +40,7 @@ object UnitTestDependencies {
     val turbine by lazy { "app.cash.turbine:turbine:${Versions.turbine}" }
     val androidxCoreTesting by lazy { "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}" }
     val koin by lazy { "io.insert-koin:koin-test-junit5:${Versions.koinTest}" }
+    val room by lazy { "androidx.room:room-testing:${Versions.room}" }
 }
 
 object IntegrationTestDependencies {

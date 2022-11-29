@@ -1,5 +1,6 @@
 package com.mateuszgrabarski.habittracker.business.habits
 
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.resources.R
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.collections.shouldContainInOrder

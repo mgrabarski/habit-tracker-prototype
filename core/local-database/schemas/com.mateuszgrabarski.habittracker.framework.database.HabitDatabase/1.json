@@ -1,0 +1,305 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "dde50cdc0e115d0554ccaf6ae107092d",
+    "entities": [
+      {
+        "tableName": "user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `created_ts` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createDate",
+            "columnName": "created_ts",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_user_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_id` ON `${TABLE_NAME}` (`id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "habit",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `create_time` TEXT NOT NULL, `archived` INTEGER NOT NULL, `user_id` TEXT NOT NULL, `icon_image` TEXT NOT NULL, `icon_color` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createDate",
+            "columnName": "create_time",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archived",
+            "columnName": "archived",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "user_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon.image",
+            "columnName": "icon_image",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon.color",
+            "columnName": "icon_color",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_habit_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_id` ON `${TABLE_NAME}` (`id`)"
+          },
+          {
+            "name": "index_habit_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "habit_type_details",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `type` TEXT NOT NULL, `habit_id` TEXT NOT NULL, `numbers_goal` REAL, `numbers_unit` TEXT, `time_hours` INTEGER, `time_minutes` INTEGER, PRIMARY KEY(`id`), FOREIGN KEY(`habit_id`) REFERENCES `habit`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "habitId",
+            "columnName": "habit_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numberData.goal",
+            "columnName": "numbers_goal",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numberData.unit",
+            "columnName": "numbers_unit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeData.hours",
+            "columnName": "time_hours",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeData.minutes",
+            "columnName": "time_minutes",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_habit_type_details_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_type_details_id` ON `${TABLE_NAME}` (`id`)"
+          },
+          {
+            "name": "index_habit_type_details_habit_id",
+            "unique": false,
+            "columnNames": [
+              "habit_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_type_details_habit_id` ON `${TABLE_NAME}` (`habit_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "habit",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "habit_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "habit_duration",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `start_date` TEXT NOT NULL, `end_date` TEXT, `duration` TEXT NOT NULL, `week_days` TEXT NOT NULL, `month_days` TEXT NOT NULL, `habit_id` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`habit_id`) REFERENCES `habit`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "start_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "end_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weekDays",
+            "columnName": "week_days",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "monthDays",
+            "columnName": "month_days",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "habitId",
+            "columnName": "habit_id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_habit_duration_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_duration_id` ON `${TABLE_NAME}` (`id`)"
+          },
+          {
+            "name": "index_habit_duration_habit_id",
+            "unique": false,
+            "columnNames": [
+              "habit_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_habit_duration_habit_id` ON `${TABLE_NAME}` (`habit_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "habit",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "habit_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dde50cdc0e115d0554ccaf6ae107092d')"
+    ]
+  }
+}

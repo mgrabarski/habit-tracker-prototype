@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mateuszgrabarski.habittracker.business.habits.HabitType
+import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
 import com.mateuszgrabarski.habittracker.features.habits.add.application.BaseHabitInfoValidator
-import com.mateuszgrabarski.habittracker.features.habits.add.ui.AddNewHabitViewModel
+import com.mateuszgrabarski.habittracker.features.habits.add.ui.screen.base.viewmodel.AddNewHabitViewModel
 import com.mateuszgrabarski.habittracker.resources.R
 import com.mateuszgrabarski.habittracker.resources.ui.components.spinner.SelectableSpinner
 
