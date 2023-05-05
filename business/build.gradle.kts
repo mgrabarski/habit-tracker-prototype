@@ -12,10 +12,6 @@ android {
 
     setLibraryConfig()
 
-    tasks.withType<Test> {
-        useJUnitPlatform()
-    }
-
     kotlinOptions {
         jvmTarget = Java.version.toString()
     }

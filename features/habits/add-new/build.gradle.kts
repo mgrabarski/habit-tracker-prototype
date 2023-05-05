@@ -24,10 +24,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
-
-    tasks.withType<Test> {
-        useJUnitPlatform()
-    }
 }
 
 dependencies {
