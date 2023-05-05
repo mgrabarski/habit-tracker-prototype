@@ -50,6 +50,7 @@ fun BaseExtension.setLibraryConfig() {
 
     testOptions {
         unitTests.all {
+            it.useJUnitPlatform()
             it.testLogging {
                 events = setOf(FAILED)
             }
