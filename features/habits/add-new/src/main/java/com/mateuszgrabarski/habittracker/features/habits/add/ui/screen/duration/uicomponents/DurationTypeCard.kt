@@ -47,7 +47,7 @@ fun DurationTypeCard(
                                 role = Role.RadioButton
                             )
                             .padding(all = 8.dp),
-                        verticalAlignment = Alignment.CenterVertically,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         RadioButton(
                             selected = selectedDuration == it,

@@ -96,7 +96,6 @@ fun SelectableSpinner(
 @Preview(showSystemUi = true)
 @Composable
 private fun SelectableSpinnerPreview() {
-
     data class SomeItems(override val stringId: Int) : ItemToSelect
 
     SelectableSpinner(

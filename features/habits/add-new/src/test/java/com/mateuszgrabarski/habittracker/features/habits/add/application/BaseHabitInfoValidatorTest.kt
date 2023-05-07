@@ -27,7 +27,10 @@ class BaseHabitInfoValidatorTest : DescribeSpec({
 
         it("given not valid icon but valid name and type then should be not valid") {
             sut.isValid(
-                selectedIcon = null, habitName = VALID_NAME, habitType = VALID_TYPE, inputs = null
+                selectedIcon = null,
+                habitName = VALID_NAME,
+                habitType = VALID_TYPE,
+                inputs = null
             ).shouldBeFalse()
         }
 
@@ -271,7 +274,8 @@ class BaseHabitInfoValidatorTest : DescribeSpec({
 })
 
 private val VALID_ICON = SelectedIcon(
-    icon = HabitIcon.Water, color = 0
+    icon = HabitIcon.Water,
+    color = 0
 )
 
 private const val VALID_NAME = "some name"

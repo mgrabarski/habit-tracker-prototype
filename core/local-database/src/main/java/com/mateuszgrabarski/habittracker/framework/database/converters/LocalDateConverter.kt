@@ -7,11 +7,15 @@ import java.time.format.DateTimeParseException
 internal class LocalDateConverter {
 
     @TypeConverter
-    fun toDate(dateString: String?) = if (dateString != null) try {
-        LocalDate.parse(dateString)
-    } catch (e: DateTimeParseException) {
+    fun toDate(dateString: String?) = if (dateString != null) {
+        try {
+            LocalDate.parse(dateString)
+        } catch (e: DateTimeParseException) {
+            null
+        }
+    } else {
         null
-    } else null
+    }
 
     @TypeConverter
     fun toDateString(date: LocalDate) = date.toString()

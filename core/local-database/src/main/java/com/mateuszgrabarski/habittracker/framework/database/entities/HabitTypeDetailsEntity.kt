@@ -27,7 +27,7 @@ import com.mateuszgrabarski.habittracker.framework.database.Tables.TableHabitTyp
     ],
     indices = [
         Index(value = [Indexes.Id]),
-        Index(value = [Indexes.HabitId]),
+        Index(value = [Indexes.HabitId])
     ]
 )
 internal data class HabitTypeDetailsEntity(

@@ -49,7 +49,7 @@ fun BottomBar(
                 },
                 label = {
                     Text(text = stringResource(id = destination.label))
-                },
+                }
             )
         }
     }

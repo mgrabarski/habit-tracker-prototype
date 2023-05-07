@@ -37,7 +37,7 @@ fun AddNewHabitScreen(
 
     var showDialog by remember { mutableStateOf(false) }
 
-    if (showDialog)
+    if (showDialog) {
         ChooseHabitIconDialog(
             setShowDialog = {
                 showDialog = it
@@ -49,6 +49,7 @@ fun AddNewHabitScreen(
                 showDialog = false
             }
         )
+    }
 
     Column(
         modifier = Modifier

@@ -8,6 +8,6 @@ fun SplashScreenView(navigateToHome: () -> Unit) {
     SplashScreen(
         navigateToHome = {
             navigateToHome()
-        },
+        }
     )
 }

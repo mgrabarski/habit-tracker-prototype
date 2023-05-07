@@ -20,6 +20,9 @@ fun ChooseTimeDialog(
                     minutes = minute
                 )
             )
-        }, hourOfDay, minutes, true
+        },
+        hourOfDay,
+        minutes,
+        true
     ).show()
 }

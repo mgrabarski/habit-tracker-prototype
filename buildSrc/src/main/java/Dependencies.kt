@@ -60,5 +60,5 @@ object BuildPlugins {
 }
 
 object Java {
-    val version = JavaVersion.VERSION_11
+    val version = JavaVersion.VERSION_17
 }
