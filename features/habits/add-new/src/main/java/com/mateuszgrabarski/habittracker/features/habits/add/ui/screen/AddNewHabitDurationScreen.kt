@@ -27,7 +27,8 @@ import org.koin.core.parameter.parametersOf
 
 @Composable
 fun AddNewHabitDurationScreen(
-    habitBaseDefinition: NewHabitBaseDefinition
+    habitBaseDefinition: NewHabitBaseDefinition,
+    moveBackToList: () -> Unit
 ) {
     val viewModel = getViewModel<AddNewHabitDurationScreenViewModel> {
         parametersOf(habitBaseDefinition)
@@ -81,7 +82,8 @@ fun AddNewHabitDurationScreen(
         },
         showEndDateDialog = {
             showEndDateDialog = true
-        }
+        },
+        moveBackToList = moveBackToList
     )
 }
 
@@ -89,7 +91,8 @@ fun AddNewHabitDurationScreen(
 private fun Content(
     viewModel: AddNewHabitDurationScreenViewModel,
     showStartDateDialog: () -> Unit,
-    showEndDateDialog: () -> Unit
+    showEndDateDialog: () -> Unit,
+    moveBackToList: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -133,7 +136,7 @@ private fun Content(
                 modifier = Modifier.fillMaxWidth(),
                 enabled = viewModel.saveEnabled,
                 onClick = {
-                    viewModel.saveHabit { }
+                    viewModel.saveHabit(moveBackToList)
                 }
             ) {
                 Text(text = stringResource(id = add_habit_duration_save))
