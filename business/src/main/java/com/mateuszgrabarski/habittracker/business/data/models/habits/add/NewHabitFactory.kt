@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.business.data.models.habits.add
 
-import com.mateuszgrabarski.habittracker.business.data.models.habits.NewHabit
+import com.mateuszgrabarski.habittracker.business.data.models.habits.Habit
 import com.mateuszgrabarski.habittracker.business.data.types.Id
 
 class NewHabitFactory {
@@ -9,7 +9,7 @@ class NewHabitFactory {
         userId: Id,
         baseDefinition: NewHabitBaseDefinition,
         durationDefinition: HabitDurationDefinition
-    ) = NewHabit(
+    ) = Habit(
         ownerId = userId,
         id = Id.randomUUID(),
         name = baseDefinition.name,

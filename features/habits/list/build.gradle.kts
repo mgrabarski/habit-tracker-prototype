@@ -1,3 +1,4 @@
+import Libraries.baseDependencies
 import Libraries.uiAndCompose
 
 plugins {
@@ -26,7 +27,9 @@ android {
 }
 
 dependencies {
+    baseDependencies()
     uiAndCompose()
 
     implementation(project(Modules.resources))
+    implementation(project(Modules.business))
 }

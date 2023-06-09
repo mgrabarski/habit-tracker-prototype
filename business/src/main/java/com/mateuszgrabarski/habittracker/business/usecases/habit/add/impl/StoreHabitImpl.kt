@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.business.usecases.habit.add.impl
 
-import com.mateuszgrabarski.habittracker.business.data.models.habits.NewHabit
+import com.mateuszgrabarski.habittracker.business.data.models.habits.Habit
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.HabitDurationDefinition
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitBaseDefinition
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitFactory
@@ -25,7 +25,7 @@ class StoreHabitImpl(
     override fun store(
         baseDefinition: NewHabitBaseDefinition,
         durationDefinition: HabitDurationDefinition
-    ): Flow<UseCaseWithResult<NewHabit>> = flow {
+    ): Flow<UseCaseWithResult<Habit>> = flow {
         val userId = storage.readActiveUserId().first() ?: run {
             emit(GenericError(errorMessage = USER_NOT_SET))
             return@flow

@@ -1,6 +1,6 @@
 package com.mateuszgrabarski.habittracker.business.usecases.habit.add.impl
 
-import com.mateuszgrabarski.habittracker.business.data.models.habits.NewHabit
+import com.mateuszgrabarski.habittracker.business.data.models.habits.Habit
 import com.mateuszgrabarski.habittracker.business.data.models.habits.add.NewHabitFactory
 import com.mateuszgrabarski.habittracker.business.data.types.Id
 import com.mateuszgrabarski.habittracker.business.fixtures.HabitDurationDefinitionFixtures
@@ -64,7 +64,7 @@ class StoreHabitImplTest : DescribeSpec({
                     durationDefinition = HabitDurationDefinitionFixtures.any()
                 ).first()
 
-                result.shouldBeInstanceOf<UseCaseWithResult.Success<NewHabit>>()
+                result.shouldBeInstanceOf<UseCaseWithResult.Success<Habit>>()
             }
         }
 

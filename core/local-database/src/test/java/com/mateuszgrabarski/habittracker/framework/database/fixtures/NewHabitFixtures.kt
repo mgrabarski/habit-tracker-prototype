@@ -2,7 +2,7 @@ package com.mateuszgrabarski.habittracker.framework.database.fixtures
 
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitIconData
 import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData
-import com.mateuszgrabarski.habittracker.business.data.models.habits.NewHabit
+import com.mateuszgrabarski.habittracker.business.data.models.habits.Habit
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitDuration
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitIcon
 import com.mateuszgrabarski.habittracker.business.data.models.habits.options.HabitType
@@ -14,7 +14,7 @@ object NewHabitFixtures {
     fun anyNewHabit(
         type: HabitType = HabitType.None,
         inputs: HabitTypeData = HabitTypeData.NotNeededData
-    ) = NewHabit(
+    ) = Habit(
         ownerId = Id.randomUUID(),
         id = Id.randomUUID(),
         name = "some name",
