@@ -1,7 +1,7 @@
 package com.mateuszgrabarski.habittracker.framework.database.mappers
 
-import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData
 import com.mateuszgrabarski.habittracker.business.data.models.habits.Habit
+import com.mateuszgrabarski.habittracker.business.data.models.habits.HabitTypeData
 import com.mateuszgrabarski.habittracker.business.data.types.Id
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitDurationEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitEntity
@@ -50,6 +50,7 @@ private fun HabitTypeData.toTimeData() = when (this) {
         hours = hours,
         minutes = minutes
     )
+
     else -> null
 }
 
@@ -58,5 +59,6 @@ private fun HabitTypeData.toNumberData() = when (this) {
         goal = goal,
         unit = unit
     )
+
     else -> null
 }
