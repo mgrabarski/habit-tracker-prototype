@@ -6,7 +6,7 @@ import com.mateuszgrabarski.habittracker.business.data.types.Id
 import java.time.DayOfWeek
 import java.time.LocalDate
 
-data class NewHabit(
+data class Habit(
     val ownerId: Id,
     val id: Id,
     val name: String,

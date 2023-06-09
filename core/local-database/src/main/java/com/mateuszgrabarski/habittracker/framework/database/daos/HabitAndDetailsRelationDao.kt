@@ -9,6 +9,7 @@ import com.mateuszgrabarski.habittracker.framework.database.entities.HabitDurati
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.HabitTypeDetailsEntity
 import com.mateuszgrabarski.habittracker.framework.database.entities.relations.HabitAndDetailsRelation
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 internal abstract class HabitAndDetailsRelationDao {
@@ -31,4 +32,8 @@ internal abstract class HabitAndDetailsRelationDao {
     @Transaction
     @Query("select * from habit where id = :habitId")
     abstract suspend fun get(habitId: Id): HabitAndDetailsRelation?
+
+    @Transaction
+    @Query("select * from habit")
+    abstract fun getAll(): Flow<List<HabitAndDetailsRelation>>
 }
